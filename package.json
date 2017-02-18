@@ -1,12 +1,12 @@
 {
-  "name": "massage",
+  "name": "massage-page",
   "version": "1.0.0",
   "description": "massage site",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build",
-    "build": "webpack -d && webpack-dev-server --content-base src/ --inline --hot --port 3000"
+    "build": "webpack -d && webpack-dev-server --content-base src/ --inline --hot --port 1234"
   },
   "author": "me",
   "license": "ISC",
@@ -21,5 +21,13 @@
     "babel-preset-react": "^6.23.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JalmariB/massage-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JalmariB/massage-page/issues"
+  },
+  "homepage": "https://github.com/JalmariB/massage-page#readme"
 }

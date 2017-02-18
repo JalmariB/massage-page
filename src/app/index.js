@@ -1,5 +1,5 @@
 
-console.log('nddo?')
+console.log('git toimii?')
 var React = require('react');
 var ReactDOM = require('react-dom');
 
