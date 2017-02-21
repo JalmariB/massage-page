@@ -1,4 +1,4 @@
-
+********* CMD ASENNUS ********
 
 asentaa rect ja react dom modulit
 npm install react react-dom --save
@@ -11,3 +11,185 @@ npm install webpack webpack-dev-server --save-dev
 
 asentaa kaiken start ja buil komennot samassa
 npm start
+
+
+
+********* REACT MUISTIINPANOT ********
+
+
+
+
+
+***PROPS***
+Tällä voidaan jakaa dynaamisesti dataa elementeille, eli antaa niille property. Props lyhenne juuri propertystä, eli elementeille passataan property. 
+
+var testiObjekti = {
+	nimi: 'Janne',
+	age: '31'
+
+}
+
+
+
+...
+<div>
+	<h1>{this.props.title}</h1> <---lisätään property elementtiin
+	<div>{this.props.objekti.nimi}</div> <--- lisätään objektin property
+</div>
+
+
+ReactDOM.render(<CustomerForm title="Customer Form" objekti={janne}/>, document.getElementById('form-container'));
+
+
+
+
+***STATE***
+määritellään aplicationin state/tila missä se on kun se avataan, mitä dataa se pitää sisällään sillon.
+Voidaan käyttää esimerkiksi siihen että nested componentteihin passataan dataa. 
+Jolloin voidaan esimerkiksi vain listan arvoja muuttamalla siirtää kaikkiin nested componentteihin datat.
+
+
+getInitialState: function () {
+	return {
+		esimObjekti: ['janne', 'matti', 'jukka']
+}
+}
+
+
+
+-----> 
+
+render: function (){
+    return(
+     
+      <div id="joku">
+        <p>otsikko</p>
+          <ul>
+            <li>{this.state.todos[2]}</li>
+          </ul>
+	<listComponent esimObjekti={this.state.esimObjekti} <---------tässä passataan nested componentille dataa
+      </div>
+
+
+    );
+  }
+});
+
+
+****STATEN MUUTTAMINEN*****
+
+Staten muuttaminen. Esimerkissä muuutetaan otsikko 3 sekunnin päästä eri otsikoksi
+
+getInitialState: function (){
+  return {
+    customerinfo: ['Nimi: ', 'Puhelinnumero: ', 'Sähköposti: ', 'Ajankohta: '],
+    booking: ['Ajanvaraus']
+
+  }
+},
+
+
+  render: function (){
+
+      var otsikonMuutos = setTimeout(function(){
+        this.setState({
+          booking: ['Otsikon muutos']
+        });
+      }.bind(this),3000);
+
+
+
+    return(
+
+      <div>
+
+            <form className="customer-info">
+            <h2 className="booking-title">{this.state.booking[0]}</h2>
+
+
+***** VIRTUAL DOM *****
+
+Virtual DOM nopeuttaa Reactin toimintaa. Virtual DOM katsoo esim staten muutokset ja vertaa niitä DOMiin, kun se löytää 
+muutoksen Virtual DOMin ja "oikean" DOMin välillä se muuttaa ainoastaan sen rivin, eikä muita rivejä. 
+Eli ei tee kaikki rivejä uudestaan kun muutos tapahtuu.
+
+
+
+*********Cycling Through Data********
+
+Map functiota käytetään jolla voidaan luoda esim pitkä lista ilman että joutuu kirjoittamaan jokaisen listan osan
+
+    var customerinfo = this.state.customerinfo;
+    customerinfo = customerinfo.map(function(item, index){
+          return (
+            <li>{item}</li>
+          )
+    });
+
+    return(
+
+      <div>
+            <ul>{customerinfo}</ul>
+
+
+
+
+*********Nesting Components********
+
+Componentin sisälle voi tehdä toisia componentteja.
+
+  render: function (){
+
+    var customerinfo = this.state.customerinfo;
+    customerinfo = customerinfo.map(function(item, index){
+          return (
+            <NestedComponent item={item} key={index}/>
+          )
+    });
+
+    return(
+
+      <div>
+            <ul>{customerinfo}</ul>....
+
+
+
+
+
+//create NestedComponent
+var NestedComponent = React.createClass({
+  render: function(){
+    return (
+
+        <li>
+          <div className="nested-component-item">
+              <span className="item-name">{this.props.item}</span>
+          </div>
+        </li>
+
+
+    );
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

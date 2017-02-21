@@ -1,0 +1,75 @@
+
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+//create component
+var CustomerForm = React.createClass({
+
+getInitialState: function (){
+  return {
+    customerinfo: ['Nimi: ', 'Puhelinnumero: ', 'Sähköposti: ', 'Ajankohta: '],
+    booking: ['Ajanvaraus']
+
+  }
+},
+
+
+  render: function (){
+
+    var customerinfo = this.state.customerinfo;
+    customerinfo = customerinfo.map(function(item, index){
+          return (
+            <NestedComponent item={item} key={index}/>
+          )
+    });
+//staten muuttaminen VOIT KÄYTTÄÄ TÄTÄ KUN JATKETAAN FORMISTA ETEENPÄIN, OTSIKKO VAIHTUU AINA KUN EDETÄÄN AJANVARAUKSESSA
+      // var otsikonMuutos = setTimeout(function(){
+      //   this.setState({
+      //     booking: ['Otsikon muutos']
+      //   });
+      // }.bind(this),3000);
+    return(
+
+      <div>
+            <ul>{customerinfo}</ul>
+            <form className="customer-info">
+              <h2 className="booking-title">{this.state.booking[0]}</h2>
+                <div className="input-container">
+                  <label htmlFor="name">{this.state.customerinfo[0]}</label>
+                  <input type="text" id="name"></input>
+                </div>
+                <div className="input-container">
+                  <label htmlFor="phonenumber">{this.state.customerinfo[1]}</label>
+                  <input type="tel" id="phonenumber"></input>
+                </div>
+                <div className="input-container">
+                  <label htmlFor="email">{this.state.customerinfo[2]}  </label>
+                  <input type="email" id="email"></input>
+                </div>
+            </form>
+            <button className="primary-button">Jatka</button>
+      </div>
+
+
+    );
+  }
+});
+
+//create NestedComponent
+var NestedComponent = React.createClass({
+  render: function(){
+    return (
+
+        <li>
+          <div className="nested-component-item">
+              <span className="item-name">{this.props.item}</span>
+          </div>
+        </li>
+
+
+    );
+  }
+})
+
+ReactDOM.render(<CustomerForm  />, document.getElementById('form-container'));
