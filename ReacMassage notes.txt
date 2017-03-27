@@ -9,6 +9,11 @@ npm install babel-core babel-loader babel-preset-es2015 babel-preset-react --sav
 asentaa webpackin
 npm install webpack webpack-dev-server --save-dev
 
+asentaa routerin
+npm install react-router --save
+
+
+
 asentaa kaiken start ja buil komennot samassa
 npm start
 
@@ -176,12 +181,28 @@ var NestedComponent = React.createClass({
 
 
 
+/********** järjestys jos haluaa uuden "sivun" ***********/
 
 
+1. 
+lisää uuteen componenttiin
+import{Link} from 'react-router';
 
+2. 
+lisää pää komponenttiin,eli index.js
+var ComponentinNimi = require('./componentinpolku')
 
+app componenttiin lisätään reitti, eli esim. 
 
+<Router history={browserHistory}>
+         
+          <Route path={'/app/componentinpolku'} component={ComponentinPolku}></Route>
+</Router>
+	
 
+3. lisää linkki siihen componenttiin mistä haluat mentävän uuteen componenttiin
+
+	<Link to={'/app/componentinpolku'}><p>linkki</p></Link>
 
 
 

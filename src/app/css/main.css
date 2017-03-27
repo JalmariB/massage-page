@@ -32,9 +32,15 @@ body {
 	letter-spacing:2px;
 	color:#777;
 	/*background-image: url('../img/stones.jpg');*/
-  background-color:#fff;
+  /*background-color:#fff;*/
+}
 
 
+/*.main {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url('../img/stones.jpg');
 }
 
 .image {
@@ -45,7 +51,9 @@ body {
   background-size: cover;
   background-position:center center;
 }
-
+h1 {
+  font-size: 1.7em;
+}
 h1,h2,h3 {
 	margin:0;
 
@@ -60,30 +68,63 @@ a {
   text-decoration: none;
   color:#fff;
 }
+
+/**** buttons ****/
+
 .primary-button {
 	border: none;
 	text-decoration: none;
-	padding:10px 0;
-	background-color:rgba(255, 163, 26, 0.9);
+	padding:15px 25px;
+  /*width: 200px;*/
+	background-color:#ffa31a;
 	border-radius:10px;
-	border:1px solid rgba(255, 163, 26, 0.9);
+	border:1px solid #ffa31a;
 	transition:0.2s all;
 	display: block;
 	margin:0 auto;
-	width:90%;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	color:#fff;
   cursor:pointer;
+  -webkit-box-shadow: 2px 19px 59px -18px rgba(0,0,0,0.7);
+-moz-box-shadow: 2px 19px 59px -18px rgba(0,0,0,0.7);
+/*box-shadow: 2px 19px 59px -18px rgba(0,0,0,0.7);*/
 }
 .primary-button:focus,
 .primary-button:active,
 .primary-button:hover {
+	border:1px solid #ff9900;
+	outline:none;
+	background-color: #ff9900;
+	color:#fff;
+}
+
+
+.secondary-button {
+	border: none;
+	text-decoration: none;
+	padding:10px 0;
+	background-color:#ffffff;
+	border-radius:10px;
+	border:1px solid #ffffff;
+	transition:0.2s all;
+	display: block;
+	margin:0 auto;
+	/*width: 200px;*/
+	font-size: 1.4em;
+	color:#fff;
+  cursor:pointer;
+  -webkit-box-shadow: 2px 19px 59px -18px rgba(0,0,0,0.7);
+-moz-box-shadow: 2px 19px 59px -18px rgba(0,0,0,0.7);
+box-shadow: 2px 19px 59px -18px rgba(0,0,0,0.7);
+}
+.secondary-button:focus,
+.secondary-button:active,
+.secondary-button:hover {
 	border:1px solid rgba(255, 163, 26, 1);
 	outline:none;
 	background-color: rgba(255, 163, 26, 1);
 	color:#fff;
 }
-
 
 /*********** Header *************/
 
@@ -95,21 +136,45 @@ a {
   height: 100%;
   left:-180px;
   background-color:#4d4d4d;
-    transition:0.2s all;
-
+  transition:0.2s all;
+  z-index: 1;
+  padding-top: 100px;
 }
 .hamburger-icon {
   position: fixed;
   font-size: 2em;
-  right:80px;
-  top:20px;
+  right:5%;
+  top:30px;
   transition:0.2s all;
   cursor:pointer;
   color:rgb(255, 163, 26);
-
 }
 .hamburger-icon:hover {
   color:#222;
+}
+.logo {
+  width: 60px;
+  position: fixed;
+  top:20px;
+  left:40px;
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+}
+.logo:hover {
+  width: 60px;
+  position: fixed;
+  top:20px;
+  left:40px;
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
 }
 
 .nav-item {
@@ -120,8 +185,8 @@ a {
 }
 .nav-item:hover {
   transition: 0.2s all;
-  color:#373737;
-  background-color: rgb(255, 163, 26);
+  color:#fff;
+  background-color: #ffa31a;
 }
 
 
@@ -130,27 +195,137 @@ a {
   left:0px !important;
 }
 
-/*********** Customerinfo block *************/
+/*********** Footer *************/
 
-#form-container {
-	width: 90%;
-	display: block;
-	margin:15% auto;
-
-	background-color: transparent;
-	/*border-radius: 10px;*/
-	/*background-color: rgba(255, 255, 255, 0.5);*/
+footer {
+  position: relative;
+  bottom:0;
+  width: 100%;
+  padding:20px 0 20px 5%;
+  background-color: #fff;
+  color:#6e6e6e;
+  text-align: center;
 }
+footer::before {
+  content:"";
+  display: block;
+  margin: 30px auto;
+  height: 1px;
+  width: 90%;
+  background-color: #e6e6e6;
+}
+
+footer p {
+  font-size: 12px;
+}
+footer span {
+  font-weight: bold;
+  color:#ffa31a;
+}
+
+.some-footer-container h5 {
+  margin-bottom:5px;
+}
+.some-footer-container p {
+  font-size: 2.5em;
+  transition: 0.2s all;
+  margin:10px;
+}
+.some-footer-container p:hover {
+  color:#ffa31a;
+}
+
+.copyright {
+  text-align: center;
+  padding: 0 5% 0 0;
+  font-size: 11px;
+}
+
+/***** First Block ****/
+
+.first-block {
+  padding:280px 0 100px 0;
+  width: 100%;
+  text-align: center;
+  background-image: url(../img/jump.jpeg);
+  color:#fff;
+}
+
+
+/***** Second Block ****/
+
+.second-block {
+  border-top: 1px solid #e6e6e6;
+  padding:150px 10%;
+  width: 100%;
+  text-align: left;
+}
+.second-block h2 {
+  text-align: center;
+}
+
+
+
+/*********** appoinment-header *************/
+
+.appoinment-header-container {
+  text-align: center;
+  margin-top:100px;
+  padding: 100px 0;
+}
+.appoinment-header-container h1::after {
+  content:"";
+  display: block;
+  margin:5px auto;
+  height: 2px;
+  width: 60px;
+  background-color: #ffa31a;
+}
+
+
+
+
+
+/*********** Appointment time block *************/
+
+
+.time-block-container {
+  padding:0 10%;
+  text-align: center;
+}
+.time-block-container ul{
+  padding:0;
+}
+.time-block-container li{
+  padding:25px;
+  background-color: #ffa31a;
+  border-radius: 30px;
+  margin:10px 0;
+  color:#ffffff;
+}
+.time-block-container li:hover{
+  background-color: #ffa31a;
+}
+.time-block-container ul li p{
+  display: inline-block;
+
+}
+
+
+
+
+
+
+/*********** Customerinfo block *************/
 
 
 .customer-info {
 	width: 90%;
-	margin:5% auto;
-	/*background-color: rgba(255, 163, 26, 1);*/
+	margin:120px auto;
 	border-radius: 10px;
-	/*box-shadow: 0px 2px 3px #888888;*/
 }
 .booking-title {
+  color: #e6e6e6;
 	padding: 10px 0;
 	text-align: left;
 	display: block;
@@ -167,14 +342,14 @@ a {
 .input-container label{
 	display: block;
 	cursor:pointer;
-	color: #777;
+	color: #e6e6e6;
 	margin:0 0 5px 10px;
 	font-weight: bold;
 }
 
 .input-container input{
-	background-color: rgba(223, 227, 230, 0.5);
-	color:#777;
+	background-color: rgba(223, 227, 230, 0.2);
+	color: #e6e6e6;
 	width: 100%;
 	font-size: 1.5em;
 	padding:15px 0 15px 0px;
@@ -182,4 +357,4 @@ a {
 	border:none;
 	outline:none;
 	border-radius:10px;
-}
+}*/
