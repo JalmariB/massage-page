@@ -1,0 +1,18 @@
+.buttons-container {
+    width: 80%;
+    font-size: 1em;
+    margin:40px auto;
+    height: 100px;
+  .primary-button {
+    float:right;
+    width: 150px;
+    padding: 10px 0;
+
+  }
+
+  .secondary-button {
+    float:left;
+    width: 150px;
+    padding: 10px 0;
+  }
+}

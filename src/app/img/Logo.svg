@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="340px" height="375px" viewBox="0 0 340 375" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" transform="translate(-86.000000, -69.000000)">
+            <g transform="translate(86.000000, 69.000000)">
+                <polygon id="Combined-Shape" fill="#6E6E6E" points="339.269044 103.397976 169.634522 0 0 103.397976 0 187.496616 7.66830518e-13 271.595257 169.634522 374.993233 339.269044 271.595257 339.269044 187.496616"></polygon>
+                <text id="B" font-family="Helvetica-Light, Helvetica" font-size="170" font-weight="300" letter-spacing="0.442708313" fill="#FFFFFF">
+                    <tspan x="115.607902" y="247">B</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

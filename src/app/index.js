@@ -10,10 +10,8 @@ var NavComponent = require('./nav')
 var FooterComponent = require('./footer')
 var FirstBlockComponent = require('./firstBlock')
 var SecondBlockComponent = require('./secondBlock')
-var CustomerForm = require('./customerForm');
 var AppointmentTimeComponent = require('./appointmentTime');
-var AppointmentHeader = require('./appointmentHeader')
-var AppointmentSelectDayComponent = require('./appointmentSelectDay')
+var AppointmentSelectDayComponent = require('./appointmentSelectDay');
 
 var App = React.createClass ({
 

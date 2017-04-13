@@ -1,0 +1,73 @@
+.calendar-container {
+  display: block;
+  margin:20px auto;
+  width: 95%;
+  max-width: 770px;
+  text-align: center;
+
+  ul {
+    padding: 0;
+  }
+  .monday,
+  .tuesday,
+  .wednesday,
+  .thursday,
+  .friday {
+    display: inline-block;
+    border: 1px solid $gray;
+    padding: 15px;
+    margin:10px 2% 10px 2%;
+    background-color: $white;
+    border-radius: 10px;
+    transition: 0.2s all;
+    cursor: pointer;
+
+    p {
+      margin:0;
+    }
+    :last-child {
+      font-size: 12px;
+    }
+
+  }
+  .monday:hover,
+  .tuesday:hover,
+  .wednesday:hover,
+  .thursday:hover,
+  .friday:hover {
+    background-color: $gray;
+    color:$white;
+  }
+
+.freeTimes-container {
+  display: block;
+    width: 80%;
+    margin: 0 auto;
+
+  .monday-times,
+  .tuesday-times {
+
+    li {
+      text-align: center;
+      padding:15px;
+      background-color: $orange;
+      border-radius: 10px;
+      margin:10px auto;
+      color:$white;
+      transition:0.2s all;
+      cursor:pointer;
+      font-size: 1.2em;
+    }
+    li:hover {
+        background-color: $darkorange;
+    }
+
+  }
+}
+
+
+
+
+
+
+}

@@ -1,0 +1,338 @@
+@font-face {
+  font-family: 'San Francisco Light';
+  src: url("fonts/SanFranciscoDisplay-Light.otf");
+  src: url("fonts/SanFranciscoDisplay-Light.otf?#iefix") format("opentype"), url("SanFranciscoDisplay-Light.otf") format("otf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'San Francisco Regular';
+  src: url("fonts/SanFranciscoDisplay-Regular.otf");
+  src: url("fonts/SanFranciscoDisplay-Regular.otf?#iefix") format("opentype"), url("SanFranciscoDisplay-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'San Francisco Bold';
+  src: url("fonts/SanFranciscoDisplay-Bold.otf");
+  src: url("fonts/SanFranciscoDisplay-Bold.otf?#iefix") format("opentype"), url("SanFranciscoDisplay-Bold.otf") format("otf");
+  font-weight: bold;
+  font-style: normal; }
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'San Francisco Light';
+  letter-spacing: 2px;
+  color: #777; }
+
+a {
+  text-decoration: none;
+  color: #ffffff; }
+
+.image {
+  background-image: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center; }
+
+h1 {
+  font-size: 1.7em; }
+
+h2 {
+  font-size: 1.4em; }
+
+h1, h3 {
+  margin: 0; }
+
+h2, h3 {
+  font-weight: normal; }
+
+li {
+  list-style: none; }
+
+/**** buttons ****/
+.primary-button {
+  border: none;
+  text-decoration: none;
+  padding: 15px 35px;
+  /*width: 200px;*/
+  font-weight: normal;
+  background-color: #ffa31a;
+  border-radius: 10px;
+  border: 1px solid #ffa31a;
+  transition: 0.2s all;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.1em;
+  color: #fff;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75); }
+
+.primary-button:focus,
+.primary-button:active,
+.primary-button:hover {
+  border: 1px solid #ff9900;
+  outline: none;
+  background-color: #ff9900;
+  color: #fff; }
+
+.secondary-button {
+  font-weight: normal;
+  border: none;
+  text-decoration: none;
+  padding: 15px 35px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  transition: 0.2s all;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.1em;
+  color: #777;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75); }
+
+.secondary-button:focus,
+.secondary-button:active,
+.secondary-button:hover {
+  border: 1px solid #4d4d4d;
+  outline: none;
+  background-color: #4d4d4d;
+  color: #ffffff; }
+
+/*********** Header *************/
+#header-container {
+  position: fixed;
+  text-align: left;
+  top: 0;
+  width: 180px;
+  height: 100%;
+  left: -180px;
+  background-color: #4d4d4d;
+  transition: 0.2s all;
+  z-index: 1;
+  padding-top: 100px; }
+
+.hamburger-icon {
+  position: fixed;
+  font-size: 2em;
+  right: 5%;
+  top: 30px;
+  transition: 0.2s all;
+  cursor: pointer;
+  color: #ffa31a; }
+
+.hamburger-icon:hover {
+  color: #222; }
+
+.logo {
+  width: 60px;
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out; }
+
+.logo:hover {
+  width: 60px;
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out; }
+
+.nav-item {
+  display: block;
+  padding: 20px;
+  width: 180;
+  cursor: pointer; }
+
+.nav-item:hover {
+  transition: 0.2s all;
+  color: #ffffff;
+  background-color: #ffa31a; }
+
+.hamburger-in {
+  transition: 0.2s all;
+  left: 0px !important; }
+
+/***** First Block ****/
+.first-block {
+  padding: 280px 0 100px 0;
+  width: 100%;
+  text-align: center;
+  background-image: url(../img/jump.jpeg);
+  color: #ffffff; }
+
+/***** Second Block ****/
+.second-block {
+  border-top: 1px solid #6e6e6e;
+  padding: 150px 10%;
+  width: 100%;
+  text-align: left; }
+  .second-block h2 {
+    text-align: center; }
+
+/*********** appoinment-header *************/
+.appoinment-header-container {
+  text-align: center;
+  margin-top: 100px;
+  padding: 100px 0; }
+  .appoinment-header-container h1::after {
+    content: "";
+    display: block;
+    margin: 5px auto;
+    height: 2px;
+    width: 60px;
+    background-color: #ffa31a; }
+
+/*********** Appointment time block *************/
+.time-block-container {
+  width: 75%;
+  margin: 0px auto 40px auto;
+  text-align: center;
+  max-width: 770px; }
+  .time-block-container ul {
+    padding: 0; }
+    .time-block-container ul li {
+      padding: 5px;
+      background-color: #ffa31a;
+      border-radius: 10px;
+      margin: 10px 0;
+      color: #ffffff;
+      display: flex;
+      transition: 0.2s all;
+      cursor: pointer; }
+      .time-block-container ul li p {
+        text-align: left;
+        margin-left: 25px;
+        flex: 1; }
+      .time-block-container ul li p:first-child {
+        flex: 5; }
+    .time-block-container ul li:hover {
+      background-color: #ff9900; }
+
+.calendar-container {
+  display: block;
+  margin: 20px auto;
+  width: 95%;
+  max-width: 770px;
+  text-align: center; }
+  .calendar-container ul {
+    padding: 0; }
+  .calendar-container .monday,
+  .calendar-container .tuesday,
+  .calendar-container .wednesday,
+  .calendar-container .thursday,
+  .calendar-container .friday {
+    display: inline-block;
+    border: 1px solid #6e6e6e;
+    padding: 15px;
+    margin: 10px 2% 10px 2%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: 0.2s all;
+    cursor: pointer; }
+    .calendar-container .monday p,
+    .calendar-container .tuesday p,
+    .calendar-container .wednesday p,
+    .calendar-container .thursday p,
+    .calendar-container .friday p {
+      margin: 0; }
+    .calendar-container .monday :last-child,
+    .calendar-container .tuesday :last-child,
+    .calendar-container .wednesday :last-child,
+    .calendar-container .thursday :last-child,
+    .calendar-container .friday :last-child {
+      font-size: 12px; }
+  .calendar-container .monday:hover,
+  .calendar-container .tuesday:hover,
+  .calendar-container .wednesday:hover,
+  .calendar-container .thursday:hover,
+  .calendar-container .friday:hover {
+    background-color: #6e6e6e;
+    color: #ffffff; }
+  .calendar-container .freeTimes-container {
+    display: block;
+    width: 80%;
+    margin: 0 auto; }
+    .calendar-container .freeTimes-container .monday-times li,
+    .calendar-container .freeTimes-container .tuesday-times li {
+      text-align: center;
+      padding: 15px;
+      background-color: #ffa31a;
+      border-radius: 10px;
+      margin: 10px auto;
+      color: #ffffff;
+      transition: 0.2s all;
+      cursor: pointer;
+      font-size: 1.2em; }
+    .calendar-container .freeTimes-container .monday-times li:hover,
+    .calendar-container .freeTimes-container .tuesday-times li:hover {
+      background-color: #ff9900; }
+
+.buttons-container {
+  width: 80%;
+  font-size: 1em;
+  margin: 40px auto;
+  height: 100px; }
+  .buttons-container .primary-button {
+    float: right;
+    width: 150px;
+    padding: 10px 0; }
+  .buttons-container .secondary-button {
+    float: left;
+    width: 150px;
+    padding: 10px 0; }
+
+/*********** Footer *************/
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0 20px 5%;
+  background-color: #ffffff;
+  color: #777;
+  text-align: center; }
+  footer p {
+    font-size: 12px; }
+  footer span {
+    font-weight: bold;
+    color: #ffa31a; }
+  footer .some-footer-container h5 {
+    margin-bottom: 5px; }
+  footer .some-footer-container p {
+    font-size: 2.5em;
+    transition: 0.2s all;
+    margin: 10px; }
+  footer .some-footer-container p:hover {
+    color: #ffa31a; }
+  footer .copyright {
+    text-align: center;
+    padding: 0 5% 0 0;
+    font-size: 11px; }
+
+footer::before {
+  content: "";
+  display: block;
+  margin: 30px auto;
+  height: 1px;
+  width: 90%;
+  background-color: #ccc; }
+
+/*# sourceMappingURL=style.css.map */

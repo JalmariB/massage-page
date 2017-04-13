@@ -1,0 +1,68 @@
+/*********** Header *************/
+
+#header-container {
+  position: fixed;
+  text-align: left;
+  top:0;
+  width: 180px;
+  height: 100%;
+  left:-180px;
+  background-color:$black;
+  transition:0.2s all;
+  z-index: 1;
+  padding-top: 100px;
+}
+.hamburger-icon {
+  position: fixed;
+  font-size: 2em;
+  right:5%;
+  top:30px;
+  transition:0.2s all;
+  cursor:pointer;
+  color:$orange;
+}
+.hamburger-icon:hover {
+  color:#222;
+}
+.logo {
+  width: 60px;
+  position: fixed;
+  top:20px;
+  left:40px;
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+}
+.logo:hover {
+  width: 60px;
+  position: fixed;
+  top:20px;
+  left:40px;
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+}
+
+.nav-item {
+  display: block;
+  padding:20px;
+  width: 180;
+  cursor: pointer;
+}
+.nav-item:hover {
+  transition: 0.2s all;
+  color:$white;
+  background-color: $orange;
+}
+
+
+.hamburger-in {
+  transition:0.2s all;
+  left:0px !important;
+}

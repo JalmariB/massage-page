@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'San Francisco Light';
+  src: url('fonts/SanFranciscoDisplay-Light.otf');
+  src: url('fonts/SanFranciscoDisplay-Light.otf?#iefix') format('opentype'), url('SanFranciscoDisplay-Light.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'San Francisco Regular';
+  src: url('fonts/SanFranciscoDisplay-Regular.otf');
+  src: url('fonts/SanFranciscoDisplay-Regular.otf?#iefix') format('opentype'), url('SanFranciscoDisplay-Regular.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'San Francisco Bold';
+  src: url('fonts/SanFranciscoDisplay-Bold.otf');
+  src: url('fonts/SanFranciscoDisplay-Bold.otf?#iefix') format('opentype'), url('SanFranciscoDisplay-Bold.otf') format('otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+	margin:0;
+	box-sizing: border-box;
+	font-family: 'San Francisco Light';
+	letter-spacing:2px;
+	color:$lightgray;
+}
+a {
+  text-decoration: none;
+  color:$white;
+}
+.image {
+  background-image:no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position:center center;
+}
+h1 {
+  font-size: 1.7em;
+}
+h2 {
+  font-size:1.4em;
+}
+h1,h3 {
+	margin:0;
+
+}
+h2,h3 {
+	font-weight:normal;
+}
+li  {
+  list-style: none;
+}
+
+/**** buttons ****/
+
+.primary-button {
+	border: none;
+	text-decoration: none;
+	padding:15px 35px;
+  /*width: 200px;*/
+  font-weight: normal;
+	background-color:$orange;
+	border-radius:10px;
+	border:1px solid $orange;
+	transition:0.2s all;
+	display: block;
+	margin:0 auto;
+	font-size: 1.1em;
+	color:#fff;
+  cursor:pointer;
+  -webkit-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+}
+.primary-button:focus,
+.primary-button:active,
+.primary-button:hover {
+	border:1px solid $darkorange;
+	outline:none;
+	background-color: $darkorange;
+	color:#fff;
+}
+
+
+.secondary-button {
+  font-weight: normal;
+	border: none;
+	text-decoration: none;
+	padding:15px 35px;
+	background-color:$white;
+	border-radius:10px;
+	border:1px solid $white;
+	transition:0.2s all;
+	display: block;
+	margin:0 auto;
+	font-size: 1.1em;
+	color:$lightgray;
+  cursor:pointer;
+  -webkit-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+}
+.secondary-button:focus,
+.secondary-button:active,
+.secondary-button:hover {
+	border:1px solid $black;
+	outline:none;
+	background-color: $black;
+	color:$white;
+}

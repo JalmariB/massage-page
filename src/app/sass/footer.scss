@@ -1,0 +1,47 @@
+/*********** Footer *************/
+
+footer {
+  position: relative;
+  bottom:0;
+  width: 100%;
+  padding:20px 0 20px 5%;
+  background-color: $white;
+  color:$lightgray;
+  text-align: center;
+
+  p {
+    font-size: 12px;
+  }
+  span {
+    font-weight: bold;
+    color:$orange;
+  }
+  .some-footer-container {
+    h5 {
+      margin-bottom:5px;
+    }
+    p {
+      font-size: 2.5em;
+      transition: 0.2s all;
+      margin:10px;
+    }
+    p:hover {
+      color:$orange;
+    }
+
+  }
+
+  .copyright {
+    text-align: center;
+    padding: 0 5% 0 0;
+    font-size: 11px;
+  }
+}
+footer::before {
+  content:"";
+  display: block;
+  margin: 30px auto;
+  height: 1px;
+  width: 90%;
+  background-color: $verylightgray;
+}

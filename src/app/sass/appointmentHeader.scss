@@ -1,0 +1,17 @@
+
+/*********** appoinment-header *************/
+
+.appoinment-header-container {
+  text-align: center;
+  margin-top:100px;
+  padding: 100px 0;
+
+  h1::after {
+    content:"";
+    display: block;
+    margin:5px auto;
+    height: 2px;
+    width: 60px;
+    background-color: $orange
+  }
+}

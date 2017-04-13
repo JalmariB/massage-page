@@ -208,7 +208,10 @@ app componenttiin lisätään reitti, eli esim.
 
 
 
+/********** SASS käyntiin ***********/
 
+
+D:\massage-page\src\app\sass>sass style.scss style.css
 
 
 

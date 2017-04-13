@@ -1,0 +1,38 @@
+
+/*********** Appointment time block *************/
+
+
+.time-block-container {
+  width:75%;
+  margin:0px auto 40px auto;
+  text-align: center;
+  max-width: 750px;
+
+  ul {
+    padding:0;
+
+    li{
+      padding:5px;
+      background-color: $orange;
+      border-radius: 10px;
+      margin:10px 0;
+      color:$white;
+      display:flex;
+      transition:0.2s all;
+      cursor:pointer;
+
+
+      p{
+        text-align: left;
+        margin-left: 25px;
+        flex:1;
+      }
+      p:first-child{
+        flex:5;
+      }
+    }
+    li:hover{
+      background-color: $darkorange
+    }
+  }
+}
