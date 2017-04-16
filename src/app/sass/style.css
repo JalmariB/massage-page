@@ -62,7 +62,7 @@ li {
   font-weight: normal;
   background-color: #ffa31a;
   border-radius: 10px;
-  border: 1px solid #ffa31a;
+  border: 1px solid #ffa31a !important;
   transition: 0.2s all;
   display: block;
   margin: 0 auto;
@@ -106,6 +106,12 @@ li {
   outline: none;
   background-color: #4d4d4d;
   color: #ffffff; }
+
+.appointment-container {
+  width: 75%;
+  margin: 0px auto 40px auto;
+  text-align: center;
+  max-width: 750px; }
 
 /*********** Header *************/
 #header-container {
@@ -202,14 +208,14 @@ li {
     background-color: #ffa31a; }
 
 /*********** Appointment time block *************/
-.time-block-container {
+.appointment-container {
   width: 75%;
   margin: 0px auto 40px auto;
   text-align: center;
-  max-width: 770px; }
-  .time-block-container ul {
+  max-width: 750px; }
+  .appointment-container ul {
     padding: 0; }
-    .time-block-container ul li {
+    .appointment-container ul li {
       padding: 5px;
       background-color: #ffa31a;
       border-radius: 10px;
@@ -218,13 +224,13 @@ li {
       display: flex;
       transition: 0.2s all;
       cursor: pointer; }
-      .time-block-container ul li p {
+      .appointment-container ul li p {
         text-align: left;
         margin-left: 25px;
         flex: 1; }
-      .time-block-container ul li p:first-child {
+      .appointment-container ul li p:first-child {
         flex: 5; }
-    .time-block-container ul li:hover {
+    .appointment-container ul li:hover {
       background-color: #ff9900; }
 
 .calendar-container {
@@ -299,6 +305,33 @@ li {
     float: left;
     width: 150px;
     padding: 10px 0; }
+
+.form-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto; }
+  .form-container label {
+    text-align: left;
+    display: block; }
+  .form-container input {
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin: 10px auto;
+    font-size: 1.2em; }
+  .form-container input:focus {
+    outline: none;
+    border-style: none;
+    border: 1px solid #ffa31a;
+    border-radius: 6px; }
+  .form-container .primary-button {
+    margin: 0 !important; }
+  .form-container .buttons-container {
+    width: 100%;
+    font-size: 1em;
+    margin: 40px auto;
+    height: 100px; }
 
 /*********** Footer *************/
 footer {

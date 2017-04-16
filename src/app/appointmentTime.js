@@ -15,7 +15,7 @@ var PointmentStepOne = React.createClass({
       <div>
         <NavComponent />
         <AppointmentHeaderComponent />
-        <div className="time-block-container">
+        <div className="appointment-container">
           <h2>VALITSE HIERONTA</h2>
           <ul>
             <Link to={'/app/appointmentSelectDay'}><li><p>Hieronta 30min</p><p>30€</p></li></Link>

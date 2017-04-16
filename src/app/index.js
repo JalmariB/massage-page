@@ -12,8 +12,11 @@ var FirstBlockComponent = require('./firstBlock')
 var SecondBlockComponent = require('./secondBlock')
 var AppointmentTimeComponent = require('./appointmentTime');
 var AppointmentSelectDayComponent = require('./appointmentSelectDay');
+var AppointmentForm = require('./appointmentForm');
 
 var App = React.createClass ({
+
+
 
   render: function (){
     return(
@@ -21,6 +24,7 @@ var App = React.createClass ({
           <Route path={'/app'} component={MainComponent}></Route>
           <Route path={'/app/appointmentTime'} component={AppointmentTimeComponent}></Route>
           <Route path={'/app/appointmentSelectDay'} component={AppointmentSelectDayComponent}></Route>
+          <Route path={'/app/appointmentForm'} component={AppointmentForm}></Route>
         </Router>
       );
   }

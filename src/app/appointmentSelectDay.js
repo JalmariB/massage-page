@@ -31,6 +31,7 @@ var AppointmentSelectDayComponent = React.createClass({
           <NavComponent/>
           <AppointmentHeader/>
             <div className="calendar-container">
+            <h2>VALITSE AIKA</h2>
                 <ul>
                   <li className="monday" onClick={this.showElementMonday}><p>Ma</p><p>12.12.2018</p></li>
                   <li className="tuesday" onClick={this.showElementTuesday}><p>Ti</p><p>13.12.2018</p></li>

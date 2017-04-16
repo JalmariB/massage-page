@@ -1,0 +1,32 @@
+.form-container {
+  width: 90%;
+  max-width: 600px;
+    margin: 0 auto;
+  label {
+    text-align: left;
+    display: block;
+  }
+  input {
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid $verylightgray;
+    margin: 10px auto;
+    font-size: 1.2em;
+  }
+  input:focus {
+    outline: none;
+    border-style:none;
+    border:1px solid $orange;
+    border-radius:6px;
+  }
+.primary-button {
+  margin:0 !important;
+}
+.buttons-container {
+  width: 100%;
+    font-size: 1em;
+    margin: 40px auto;
+    height: 100px;
+}
+}

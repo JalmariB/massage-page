@@ -10,7 +10,7 @@ var AppointmentButtons = React.createClass({
 
       <div className="buttons-container">
         <Link to={'/app/appointmentTime'}><button className="secondary-button">Takaisin</button></Link>
-        <button className="primary-button">Jatka</button>
+        <Link to={'/app/appointmentForm'}><button className="primary-button">Jatka</button></Link>
       </div>
 
     );
