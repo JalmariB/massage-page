@@ -1,0 +1,23 @@
+.prices-container {
+  max-width: 600px;
+  margin:0 auto;
+  width: 80%;
+  text-align: center;
+  h2 {
+    margin-bottom:40px;
+  }
+  .treatment {
+    margin:20px 0;
+  }
+  .treatment:after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: $verylightgray;
+    width: 50%;
+    margin:30px auto 60px auto;
+  }
+}
+.prices-container .treatment:last-child:after {
+  height: 0px;
+}

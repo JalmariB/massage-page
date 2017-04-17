@@ -1,7 +1,7 @@
 var React = require('react');
 
 
-import{Link} from 'react-router';
+import {Router, Route, browserHistory, Link} from 'react-router';
 
 var AppointmentHeader = require('./appointmentHeader')
 var NavComponent = require('./nav')
@@ -12,7 +12,7 @@ var AppointmentButtons = require('./appointmentButtons')
 
 var AppointmentSelectDayComponent = React.createClass({
   getInitialState: function() {
-         return { showElement: false };
+         return { showElementMonday: true };
      },
      showElementMonday: function() {
          this.setState({ showElementMonday: true });

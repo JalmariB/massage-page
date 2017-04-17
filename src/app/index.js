@@ -13,10 +13,16 @@ var SecondBlockComponent = require('./secondBlock')
 var AppointmentTimeComponent = require('./appointmentTime');
 var AppointmentSelectDayComponent = require('./appointmentSelectDay');
 var AppointmentForm = require('./appointmentForm');
+var AppointmentConfirmation = require('./appointmentConfirmation');
+var Prices = require('./prices');
+
 
 var App = React.createClass ({
-
-
+  getInitialState: function() {
+         return {
+            customerInfo: ['Testi']
+          };
+     },
 
   render: function (){
     return(
@@ -25,6 +31,8 @@ var App = React.createClass ({
           <Route path={'/app/appointmentTime'} component={AppointmentTimeComponent}></Route>
           <Route path={'/app/appointmentSelectDay'} component={AppointmentSelectDayComponent}></Route>
           <Route path={'/app/appointmentForm'} component={AppointmentForm}></Route>
+          <Route path={'/app/appointmentConfirmation'} component={AppointmentConfirmation}></Route>
+          <Route path={'/app/prices'} component={Prices}></Route>
         </Router>
       );
   }

@@ -217,3 +217,13 @@ D:\massage-page\src\app\sass>sass style.scss style.css
 
 
 
+
+<label htmlFor="email">Sähköposti:</label>
+          <input id="email"type="email" />
+        <label htmlFor="phone">Puhelinnumero:</label>
+          <input id="phone" type="tel" />
+
+
+
+
+

@@ -8,6 +8,13 @@ var FooterComponent = require('./footer');
 var Form = require('./form');
 
 var AppointmentForm = React.createClass({
+  getInitialState: function() {
+         return {
+            customerInfo: ['Testi']
+          };
+     },
+
+
 
   render: function(){
 
@@ -17,13 +24,14 @@ var AppointmentForm = React.createClass({
       <AppointmentHeader / >
       <div className="appointment-container">
         <h2>TÄYTÄ ASIKASTIETOSI</h2>
+        <p>{this.state.customerInfo}</p>
         <Form />
       </div>
       <FooterComponent />
       </div>
     );
   },
-  
+
 });
 
 module.exports = AppointmentForm;

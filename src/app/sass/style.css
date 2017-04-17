@@ -195,10 +195,12 @@ li {
     text-align: center; }
 
 /*********** appoinment-header *************/
+.header-container,
 .appoinment-header-container {
   text-align: center;
   margin-top: 100px;
   padding: 100px 0; }
+  .header-container h1::after,
   .appoinment-header-container h1::after {
     content: "";
     display: block;
@@ -332,6 +334,26 @@ li {
     font-size: 1em;
     margin: 40px auto;
     height: 100px; }
+
+.prices-container {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center; }
+  .prices-container h2 {
+    margin-bottom: 40px; }
+  .prices-container .treatment {
+    margin: 20px 0; }
+  .prices-container .treatment:after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #ccc;
+    width: 50%;
+    margin: 30px auto 60px auto; }
+
+.prices-container .treatment:last-child:after {
+  height: 0px; }
 
 /*********** Footer *************/
 footer {

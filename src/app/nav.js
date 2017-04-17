@@ -35,7 +35,7 @@ var NavTitlesComponent = React.createClass({
         <Link className="item-name" to={'/app/appointmentTime'}><li className="nav-item">
           {this.state.navNames[0]}
         </li></Link>
-        <Link className="item-name" to={'/app/customerForm'}><li className="nav-item">
+        <Link className="item-name" to={'/app/prices'}><li className="nav-item">
           {this.state.navNames[1]}
         </li></Link>
         <Link className="item-name" to={'/app/customerForm'}><li className="nav-item">
