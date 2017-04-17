@@ -226,4 +226,4 @@ D:\massage-page\src\app\sass>sass style.scss style.css
 
 
 
-
+<Link to={'/app/appointmentConfirmation'}><input className="primary-button" type="submit" value="Jatka"/></Link>

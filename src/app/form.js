@@ -6,6 +6,7 @@ var Form = React.createClass({
   render: function(){
     return (
       <div>
+
       <form id="customerForm" className="form-container" onSubmit={this.handleSubmit}>
 
       <label htmlFor="name">Name:</label>
@@ -16,7 +17,8 @@ var Form = React.createClass({
         <input id="phone" type="tel" required ref="newPhonenumber"/>
       <div className="buttons-container">
         <Link to={'/app/appointmentSelectDay'}><button className="secondary-button">Takaisin</button></Link>
-        <Link to={'/app/appointmentConfirmation'}><input className="primary-button" type="submit" value="Jatka"/></Link>
+
+        <input className="primary-button" type="submit" value="Jatka"/>
       </div>
       </form>
       </div>
@@ -26,9 +28,7 @@ var Form = React.createClass({
 
   handleSubmit: function(e){
     e.preventDefault();
-    console.log(this.refs.newName.value);
-    console.log(this.refs.newEmail.value);
-    console.log(this.refs.newPhonenumber.value);
+    this.props.onAdd(this.refs.newName.value, this.refs.newEmail.value, this.refs.newPhonenumber.value);
   }
 });
 

@@ -14,7 +14,7 @@ var AppointmentConfirmation = React.createClass ({
       <div>
         <NavComponent />
         <AppointmentHeader />
-            <h2>{this.state.customerInfo}</h2>
+            <h2>lkj</h2>
         <FooterComponent />
       </div>
           );
