@@ -3,9 +3,6 @@ var ReactDOM = require('react-dom');
 
 import{Link} from 'react-router';
 
-var FooterComponent = require('./footer')
-var NavComponent = require('./nav')
-var AppointmentHeaderComponent = require('./appointmentHeader')
 
 var PointmentStepOne = React.createClass({
 
@@ -13,21 +10,35 @@ var PointmentStepOne = React.createClass({
 
     return (
       <div>
-        <NavComponent />
-        <AppointmentHeaderComponent />
         <div className="appointment-container">
           <h2>VALITSE HIERONTA</h2>
           <ul>
-            <Link to={'/app/appointmentSelectDay'}><li><p>Hieronta 30min</p><p>30€</p></li></Link>
-            <li><p>Hieronta 45min</p><p>40€</p></li>
-            <li><p>Hieronta 60min</p><p>45€</p></li>
-            <li><p>Hieronta 90min</p><p>55€</p></li>
+            <li onClick={this.halfHour}><p>Hieronta 30min</p><p>30€</p></li>
+            <li onClick={this.fortyFive}><p>Hieronta 45min</p><p>40€</p></li>
+            <li onClick={this.hour}><p>Hieronta 60min</p><p>45€</p></li>
+            <li onClick={this.hourHalf}><p>Hieronta 90min</p><p>55€</p></li>
           </ul>
         </div>
-        <FooterComponent />
       </div>
     );
-  }
+  },
+halfHour: function(){
+  this.props.newState(false, true, false);
+  this.props.getTreatment('30 min');
+},
+fortyFive: function(){
+  this.props.newState(false, true, false);
+  this.props.getTreatment('45 min');
+},
+hour: function(){
+  this.props.newState(false, true, false);
+  this.props.getTreatment('60 min');
+},
+hourHalf: function(){
+  this.props.newState(false, true, false);
+  this.props.getTreatment('90 min');
+}
+
 });
 
 

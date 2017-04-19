@@ -1,0 +1,40 @@
+.appointment-confirmation-container {
+  display: block;
+  margin:20px auto;
+  width: 100%;
+  max-width: 770px;
+  text-align: center;
+
+.customer-details {
+  padding: 0;
+    width: 65%;
+    margin: 50px auto;
+
+  li {
+    text-align: left;
+  }
+  p {
+    display: inline-block;
+
+    strong {
+      margin-right:5px;
+    }
+  }
+}
+.customer-details:after {
+  content:"";
+  display: block;
+  margin:60px auto;
+  height: 1px;
+  width: 70%;
+  background-color: $verylightgray;
+}
+.primary-button {
+    width: 180px;
+}
+.buttons-container {
+  width: 70%;
+}
+
+
+}

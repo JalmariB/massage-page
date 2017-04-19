@@ -26,10 +26,7 @@ var AppointmentSelectDayComponent = React.createClass({
   render: function (){
 
     return(
-
       <div>
-          <NavComponent/>
-          <AppointmentHeader/>
             <div className="calendar-container">
             <h2>VALITSE AIKA</h2>
                 <ul>
@@ -43,15 +40,21 @@ var AppointmentSelectDayComponent = React.createClass({
                     { this.state.showElementMonday ? <MondayComponent /> : null}
                     { this.state.showElementTuesday ? <TuesdayComponent /> : null }
                 </div>
-                <AppointmentButtons/>
+                <div className="buttons-container">
+                  <button onClick={this.backToAppointmentTime} className="secondary-button">Takaisin</button>
+                  <button onClick={this.continueToForm} className="primary-button">Jatka</button>
+                </div>
               </div>
-          <FooterComponent />
       </div>
-
     );
-
-  }
-
+  },
+  backToAppointmentTime: function(){
+    this.props.newState(true, false, false);
+    this.props.clearTreatment();
+  },
+  continueToForm: function(){
+    this.props.newState(false, false, true)
+  },
 });
 
 module.exports = AppointmentSelectDayComponent;

@@ -227,3 +227,143 @@ D:\massage-page\src\app\sass>sass style.scss style.css
 
 
 <Link to={'/app/appointmentConfirmation'}><input className="primary-button" type="submit" value="Jatka"/></Link>
+
+
+var React = require('React');
+var ReactDOM = require('react-dom');
+
+import{Link} from 'react-router';
+
+
+var PointmentStepOne = React.createClass({
+  halfHourOnClick: function(){
+      this.showElement();
+      this.halfHour();
+   },
+  render: function(){
+
+    return (
+      <div>
+        <div className="appointment-container">
+          <h2>VALITSE HIERONTA</h2>
+          <ul>
+            <li onClick={this.halfHourOnClick}><p>Hieronta 30min</p><p>30€</p></li>
+            <li><p>Hieronta 45min</p><p>40€</p></li>
+            <li><p>Hieronta 60min</p><p>45€</p></li>
+            <li><p>Hieronta 90min</p><p>55€</p></li>
+          </ul>
+        </div>
+      </div>
+    );
+  },
+showElement: function(){
+  this.props.newState(true);
+},
+halfHour: function(){
+  this.props.treatment('30min');
+}
+
+});
+
+
+module.exports = PointmentStepOne;
+
+
+
+
+****************** appointment js
+
+var React = require('react');
+
+var ReactDOM = require('react-dom');
+
+import{Link} from 'react-router';
+
+var NavComponent = require('./nav')
+var AppointmentTime = require('./appointmentTime')
+var AppointmentHeaderComponent = require('./appointmentHeader')
+var AppointmentSelectDay = require('./appointmentSelectDay')
+var FooterComponent = require('./footer')
+
+var Appointment = React.createClass({
+  getInitialState: function() {
+
+         return {
+            customerInfo: [],
+            showComponentSelectDay: false,
+            showComponentTime: true
+
+
+          };
+
+
+     },
+
+
+  render: function(){
+
+    return (
+      <div>
+        <NavComponent />
+        <AppointmentHeaderComponent />
+        { this.state.showComponentTime ? <AppointmentTime newState={this.newState} treatment={this.treatment} /> : null}
+        { this.state.showComponentSelectDay ? <AppointmentSelectDay /> : null}
+        <FooterComponent />
+      </div>
+    );
+
+  },
+treatment: function(time){
+  var updatedCustomerInfo = this.state.customerInfo;
+  updatedCustomerInfo.push(time);
+  console.log('kutsu testi2');
+  this.setState({
+    customerInfo: updatedCustomerInfo
+  })
+    console.log(updatedCustomerInfo);
+},
+
+
+
+  newState: function(newstate) {
+      this.setState({
+        showComponentSelectDay:newstate,
+        showComponentTime:false,
+      })
+  },
+
+});
+
+
+module.exports = Appointment;
+
+
+
+
+  name: function(name){
+    var updatedCustomerInfo = this.state.customerInfo;
+    updatedCustomerInfo.push(name);
+    this.setState({
+      customerInfo: updatedCustomerInfo
+    })
+  },
+
+
+var clear = this.state;
+
+
+document.getElementById("customerName").innerHTML = "Hello World";
+
+
+document.getElementById("customerName").innerHTML = this.state.customerInfo;
+
+
+
+
+  insertCustomerInfo: function(){
+      alert(this.state.customerInfo)
+      var timeTest = setTimeout(function () {
+        document.getElementById("customerName").innerHTML = this.state.customerInfo;
+      }.bind(this), 1000);
+
+  }

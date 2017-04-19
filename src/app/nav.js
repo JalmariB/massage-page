@@ -32,7 +32,7 @@ var NavTitlesComponent = React.createClass({
   render: function(){
     return (
       <div>
-        <Link className="item-name" to={'/app/appointmentTime'}><li className="nav-item">
+        <Link className="item-name" to={'/app/appointment'}><li className="nav-item">
           {this.state.navNames[0]}
         </li></Link>
         <Link className="item-name" to={'/app/prices'}><li className="nav-item">

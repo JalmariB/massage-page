@@ -8,7 +8,7 @@ var FirstBlockComponent = React.createClass({
         <div className="first-block image">
           <h2>URHEILUHIERONTAA</h2>
           <p>Varaa aika nopeasti ja kätevästi netin kautta.</p>
-          <Link to={'/app/appointmentTime'}><button className="primary-button">Ajanvaraukseen</button></Link>
+          <Link to={'/app/appointment'}><button className="primary-button">Ajanvaraukseen</button></Link>
         </div>
       </div>
 

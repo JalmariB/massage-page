@@ -10,11 +10,9 @@ var NavComponent = require('./nav')
 var FooterComponent = require('./footer')
 var FirstBlockComponent = require('./firstBlock')
 var SecondBlockComponent = require('./secondBlock')
-var AppointmentTimeComponent = require('./appointmentTime');
-var AppointmentSelectDayComponent = require('./appointmentSelectDay');
-var AppointmentForm = require('./appointmentForm');
-var AppointmentConfirmation = require('./appointmentConfirmation');
+var Appointment = require('./appointment');
 var Prices = require('./prices');
+
 
 
 var App = React.createClass ({
@@ -28,10 +26,7 @@ var App = React.createClass ({
     return(
         <Router history={browserHistory}>
           <Route path={'/app'} component={MainComponent}></Route>
-          <Route path={'/app/appointmentTime'} component={AppointmentTimeComponent}></Route>
-          <Route path={'/app/appointmentSelectDay'} component={AppointmentSelectDayComponent}></Route>
-          <Route path={'/app/appointmentForm'} component={AppointmentForm}></Route>
-          <Route path={'/app/appointmentConfirmation'} component={AppointmentConfirmation}></Route>
+          <Route path={'/app/appointment'} component={Appointment}></Route>
           <Route path={'/app/prices'} component={Prices}></Route>
         </Router>
       );

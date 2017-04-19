@@ -11,14 +11,41 @@ var AppointmentConfirmation = React.createClass ({
   render: function(){
 
     return (
-      <div>
-        <NavComponent />
-        <AppointmentHeader />
-            <h2>lkj</h2>
-        <FooterComponent />
+      <div >
+
+            <div className="appointment-confirmation-container">
+                  <h2>TARKISTA TIEDOT</h2>
+                  <ul className="customer-details">
+                      <li><p><strong>Hieronta:</strong> </p><p id="customerTreatment"></p></li>
+                      <li><p><strong>Nimi:</strong> </p><p id="customerName"></p></li>
+                      <li><p><strong>Sähköposti:</strong> </p><p id="customerEmail"></p></li>
+                      <li><p><strong>Puhelinnumero:</strong> </p><p id="customerPhone"></p></li>
+                  </ul>
+                  <div className="buttons-container">
+                    <button onClick={this.backToForm} className="secondary-button">Takaisin</button>
+                    <button className="primary-button">Vahvista hieronta</button>
+                  </div>
+            </div >
+
       </div>
           );
-        }
+
+        },
+
+backToForm: function() {
+  this.props.clearCustomerInfo();
+  this.props.newState(false, false, true, false);
+
+},
+getConfirmationDetails: function(){
+    this.props.setCustomerInfo();
+
+
+},
+componentDidMount: function() {
+  console.log('moro mitä äijä')
+  {this.getConfirmationDetails()}
+}
       });
 
 module.exports = AppointmentConfirmation;
