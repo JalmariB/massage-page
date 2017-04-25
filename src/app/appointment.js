@@ -15,12 +15,28 @@ var FooterComponent = require('./footer')
 var Appointment = React.createClass({
   getInitialState: function() {
 
+
+      // var d = new Date();
+      // var blaa = d.getTime()  - ((24*(d.getDay()-1) ) *60 *60 *1000)
+      // var monday = new Date(blaa)
+      //
+      //
+      //
+      // for (var i = 1; i <= 5; i++){
+      //   var d = new Date();
+      //   var firstDayOnWeek = d.getTime()  - ((24*(d.getDay()- i) ) *60 *60 *1000)
+      //   var day = new Date(firstDayOnWeek)
+      //
+      //
+      //
+      // }
          return {
             customerInfo: [],
             componentTime: true,
             componentSelectDay: false,
             appointmentForm: false,
-            appointmentConfirmation: false
+            appointmentConfirmation: false,
+
 
           };
      },
@@ -31,8 +47,8 @@ var Appointment = React.createClass({
       <div>
         <NavComponent />
         <AppointmentHeaderComponent />
-        { this.state.componentTime ? <AppointmentTime newState={this.newState} getTreatment={this.getTreatment} /> : null}
-        { this.state.componentSelectDay ? <AppointmentSelectDay newState={this.newState} clearTreatment={this.clearTreatment} /> : null}
+        { this.state.componentTime ? <AppointmentTime  newState={this.newState} getTreatment={this.getTreatment} /> : null}
+        { this.state.componentSelectDay ? <AppointmentSelectDay days={this.state.days} newState={this.newState} clearTreatment={this.clearTreatment} /> : null}
         { this.state.appointmentForm ? <AppointmentForm newState={this.newState} formDetails={this.formDetails} clearCustomerInfo={this.clearCustomerInfo}/> : null}
         { this.state.appointmentConfirmation ? <AppointmentConfirmation setCustomerInfo={this.setCustomerInfo} newState={this.newState} clearCustomerInfo={this.clearCustomerInfo} /> : null}
         <FooterComponent />
@@ -41,6 +57,7 @@ var Appointment = React.createClass({
   },
 
   newState: function(b, b2, b3, b4) {
+
       this.setState({
         componentTime:b,
         componentSelectDay:b2,
@@ -48,9 +65,13 @@ var Appointment = React.createClass({
         appointmentConfirmation: b4
 
       })
-      console.log(this.state.customerInfo);
+      console.log(this.state.days);
 
   },
+  setWeeks: function(){
+
+  },
+
 getTreatment:function(treatment){
     var updatedCustomerInfo = this.state.customerInfo;
     updatedCustomerInfo.push(treatment);

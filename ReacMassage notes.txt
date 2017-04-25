@@ -3,7 +3,7 @@
 asentaa rect ja react dom modulit
 npm install react react-dom --save
 
-kääntää react ja jsx ---> javascriptiksi
+kï¿½ï¿½ntï¿½ï¿½ react ja jsx ---> javascriptiksi
 npm install babel-core babel-loader babel-preset-es2015 babel-preset-react --save-dev
 
 asentaa webpackin
@@ -26,7 +26,7 @@ npm start
 
 
 ***PROPS***
-Tällä voidaan jakaa dynaamisesti dataa elementeille, eli antaa niille property. Props lyhenne juuri propertystä, eli elementeille passataan property. 
+Tï¿½llï¿½ voidaan jakaa dynaamisesti dataa elementeille, eli antaa niille property. Props lyhenne juuri propertystï¿½, eli elementeille passataan property.
 
 var testiObjekti = {
 	nimi: 'Janne',
@@ -38,8 +38,8 @@ var testiObjekti = {
 
 ...
 <div>
-	<h1>{this.props.title}</h1> <---lisätään property elementtiin
-	<div>{this.props.objekti.nimi}</div> <--- lisätään objektin property
+	<h1>{this.props.title}</h1> <---lisï¿½tï¿½ï¿½n property elementtiin
+	<div>{this.props.objekti.nimi}</div> <--- lisï¿½tï¿½ï¿½n objektin property
 </div>
 
 
@@ -49,9 +49,9 @@ ReactDOM.render(<CustomerForm title="Customer Form" objekti={janne}/>, document.
 
 
 ***STATE***
-määritellään aplicationin state/tila missä se on kun se avataan, mitä dataa se pitää sisällään sillon.
-Voidaan käyttää esimerkiksi siihen että nested componentteihin passataan dataa. 
-Jolloin voidaan esimerkiksi vain listan arvoja muuttamalla siirtää kaikkiin nested componentteihin datat.
+mï¿½ï¿½ritellï¿½ï¿½n aplicationin state/tila missï¿½ se on kun se avataan, mitï¿½ dataa se pitï¿½ï¿½ sisï¿½llï¿½ï¿½n sillon.
+Voidaan kï¿½yttï¿½ï¿½ esimerkiksi siihen ettï¿½ nested componentteihin passataan dataa.
+Jolloin voidaan esimerkiksi vain listan arvoja muuttamalla siirtï¿½ï¿½ kaikkiin nested componentteihin datat.
 
 
 getInitialState: function () {
@@ -62,17 +62,17 @@ getInitialState: function () {
 
 
 
------> 
+----->
 
 render: function (){
     return(
-     
+
       <div id="joku">
         <p>otsikko</p>
           <ul>
             <li>{this.state.todos[2]}</li>
           </ul>
-	<listComponent esimObjekti={this.state.esimObjekti} <---------tässä passataan nested componentille dataa
+	<listComponent esimObjekti={this.state.esimObjekti} <---------tï¿½ssï¿½ passataan nested componentille dataa
       </div>
 
 
@@ -83,11 +83,11 @@ render: function (){
 
 ****STATEN MUUTTAMINEN*****
 
-Staten muuttaminen. Esimerkissä muuutetaan otsikko 3 sekunnin päästä eri otsikoksi
+Staten muuttaminen. Esimerkissï¿½ muuutetaan otsikko 3 sekunnin pï¿½ï¿½stï¿½ eri otsikoksi
 
 getInitialState: function (){
   return {
-    customerinfo: ['Nimi: ', 'Puhelinnumero: ', 'Sähköposti: ', 'Ajankohta: '],
+    customerinfo: ['Nimi: ', 'Puhelinnumero: ', 'Sï¿½hkï¿½posti: ', 'Ajankohta: '],
     booking: ['Ajanvaraus']
 
   }
@@ -114,15 +114,15 @@ getInitialState: function (){
 
 ***** VIRTUAL DOM *****
 
-Virtual DOM nopeuttaa Reactin toimintaa. Virtual DOM katsoo esim staten muutokset ja vertaa niitä DOMiin, kun se löytää 
-muutoksen Virtual DOMin ja "oikean" DOMin välillä se muuttaa ainoastaan sen rivin, eikä muita rivejä. 
-Eli ei tee kaikki rivejä uudestaan kun muutos tapahtuu.
+Virtual DOM nopeuttaa Reactin toimintaa. Virtual DOM katsoo esim staten muutokset ja vertaa niitï¿½ DOMiin, kun se lï¿½ytï¿½ï¿½
+muutoksen Virtual DOMin ja "oikean" DOMin vï¿½lillï¿½ se muuttaa ainoastaan sen rivin, eikï¿½ muita rivejï¿½.
+Eli ei tee kaikki rivejï¿½ uudestaan kun muutos tapahtuu.
 
 
 
 *********Cycling Through Data********
 
-Map functiota käytetään jolla voidaan luoda esim pitkä lista ilman että joutuu kirjoittamaan jokaisen listan osan
+Map functiota kï¿½ytetï¿½ï¿½n jolla voidaan luoda esim pitkï¿½ lista ilman ettï¿½ joutuu kirjoittamaan jokaisen listan osan
 
     var customerinfo = this.state.customerinfo;
     customerinfo = customerinfo.map(function(item, index){
@@ -141,7 +141,7 @@ Map functiota käytetään jolla voidaan luoda esim pitkä lista ilman että joutuu k
 
 *********Nesting Components********
 
-Componentin sisälle voi tehdä toisia componentteja.
+Componentin sisï¿½lle voi tehdï¿½ toisia componentteja.
 
   render: function (){
 
@@ -181,26 +181,26 @@ var NestedComponent = React.createClass({
 
 
 
-/********** järjestys jos haluaa uuden "sivun" ***********/
+/********** jï¿½rjestys jos haluaa uuden "sivun" ***********/
 
 
-1. 
-lisää uuteen componenttiin
+1.
+lisï¿½ï¿½ uuteen componenttiin
 import{Link} from 'react-router';
 
-2. 
-lisää pää komponenttiin,eli index.js
+2.
+lisï¿½ï¿½ pï¿½ï¿½ komponenttiin,eli index.js
 var ComponentinNimi = require('./componentinpolku')
 
-app componenttiin lisätään reitti, eli esim. 
+app componenttiin lisï¿½tï¿½ï¿½n reitti, eli esim.
 
 <Router history={browserHistory}>
-         
+
           <Route path={'/app/componentinpolku'} component={ComponentinPolku}></Route>
 </Router>
-	
 
-3. lisää linkki siihen componenttiin mistä haluat mentävän uuteen componenttiin
+
+3. lisï¿½ï¿½ linkki siihen componenttiin mistï¿½ haluat mentï¿½vï¿½n uuteen componenttiin
 
 	<Link to={'/app/componentinpolku'}><p>linkki</p></Link>
 
@@ -208,7 +208,7 @@ app componenttiin lisätään reitti, eli esim.
 
 
 
-/********** SASS käyntiin ***********/
+/********** SASS kï¿½yntiin ***********/
 
 
 D:\massage-page\src\app\sass>sass style.scss style.css
@@ -218,7 +218,7 @@ D:\massage-page\src\app\sass>sass style.scss style.css
 
 
 
-<label htmlFor="email">Sähköposti:</label>
+<label htmlFor="email">Sï¿½hkï¿½posti:</label>
           <input id="email"type="email" />
         <label htmlFor="phone">Puhelinnumero:</label>
           <input id="phone" type="tel" />
@@ -247,10 +247,10 @@ var PointmentStepOne = React.createClass({
         <div className="appointment-container">
           <h2>VALITSE HIERONTA</h2>
           <ul>
-            <li onClick={this.halfHourOnClick}><p>Hieronta 30min</p><p>30€</p></li>
-            <li><p>Hieronta 45min</p><p>40€</p></li>
-            <li><p>Hieronta 60min</p><p>45€</p></li>
-            <li><p>Hieronta 90min</p><p>55€</p></li>
+            <li onClick={this.halfHourOnClick}><p>Hieronta 30min</p><p>30ï¿½</p></li>
+            <li><p>Hieronta 45min</p><p>40ï¿½</p></li>
+            <li><p>Hieronta 60min</p><p>45ï¿½</p></li>
+            <li><p>Hieronta 90min</p><p>55ï¿½</p></li>
           </ul>
         </div>
       </div>
@@ -270,100 +270,117 @@ module.exports = PointmentStepOne;
 
 
 
-
-****************** appointment js
-
 var React = require('react');
-
-var ReactDOM = require('react-dom');
 
 import{Link} from 'react-router';
 
-var NavComponent = require('./nav')
-var AppointmentTime = require('./appointmentTime')
-var AppointmentHeaderComponent = require('./appointmentHeader')
-var AppointmentSelectDay = require('./appointmentSelectDay')
-var FooterComponent = require('./footer')
 
-var Appointment = React.createClass({
+var NavComponent = require('./nav');
+var Header = require('./header');
+var FooterComponent = require('./footer');
+
+
+var Contact = React.createClass ({
   getInitialState: function() {
 
          return {
-            customerInfo: [],
-            showComponentSelectDay: false,
-            showComponentTime: true
-
+            header: 'moi'
 
           };
-
-
      },
 
-
   render: function(){
-
     return (
       <div>
-        <NavComponent />
-        <AppointmentHeaderComponent />
-        { this.state.showComponentTime ? <AppointmentTime newState={this.newState} treatment={this.treatment} /> : null}
-        { this.state.showComponentSelectDay ? <AppointmentSelectDay /> : null}
-        <FooterComponent />
-      </div>
+          <NavComponent/>
+
+          { this.state.header ? <Header newHeaderState={this.newHeaderState} /> : null}
+
+              <div className="contact-container">
+                  <h2>YHTEYSTIEDOT</h2>
+                  <div className="contact-information">
+                    <p className="phone">050 6966680</p>
+                    <p className="email">janne.berg@hierontatereapeutti.fi</p>
+                    <p className="address">Aleksanterinkatu 29 B 33</p>
+                  </div>
+                  <div className="map">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.930948467768!2d24.941833716373836!3d60.16532198195916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920bc95c7f22a3%3A0x436ac3711d65c332!2sErottajankatu%2C+00130+Helsinki%2C+Suomi!5e0!3m2!1sfi!2sfi!4v1492843395589"></iframe>
+                  </div>
+              </div>
+          <FooterComponent />
+        </div>
     );
-
   },
-treatment: function(time){
-  var updatedCustomerInfo = this.state.customerInfo;
-  updatedCustomerInfo.push(time);
-  console.log('kutsu testi2');
-  this.setState({
-    customerInfo: updatedCustomerInfo
-  })
-    console.log(updatedCustomerInfo);
-},
+  newHeaderState:function(){
+console.log('newHeaderState')
+    var newTitleContact = this.state.header;
+    newTitleContact
 
+    this.setState({
 
+      header: newTitleContact
 
-  newState: function(newstate) {
-      this.setState({
-        showComponentSelectDay:newstate,
-        showComponentTime:false,
-      })
+    })
+    console.log(this.state.newTitleContact);
+    document.getElementById("header-title").innerHTML = this.state.header;
   },
 
 });
-
-
-module.exports = Appointment;
-
-
-
-
-  name: function(name){
-    var updatedCustomerInfo = this.state.customerInfo;
-    updatedCustomerInfo.push(name);
-    this.setState({
-      customerInfo: updatedCustomerInfo
-    })
-  },
-
-
-var clear = this.state;
-
-
-document.getElementById("customerName").innerHTML = "Hello World";
-
-
-document.getElementById("customerName").innerHTML = this.state.customerInfo;
+module.exports = Contact;
 
 
 
 
-  insertCustomerInfo: function(){
-      alert(this.state.customerInfo)
-      var timeTest = setTimeout(function () {
-        document.getElementById("customerName").innerHTML = this.state.customerInfo;
-      }.bind(this), 1000);
 
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var d = new Date();
+var blaa = d.getTime()  - ((24*(d.getDay()-1) ) *60 *60 *1000)
+var monday = new Date(blaa)
+var mondayDate = new Date(d.getYear(), d.getMonth(), d.getUTCDate() - d);
+
+
+for (var i = 1; i <= 4; i++){
+	var newDate = new Date(mondayDate.getTime() + (24 *i) * 60 * 60 * 1000 )
+	if(newDate.getDay() !== 6 && newDate.getDate() !== 7)
+	console.log(newDate)
+}

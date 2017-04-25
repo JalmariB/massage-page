@@ -1,4 +1,4 @@
-var React = require('React');
+var React = require('react');
 import{Link} from 'react-router';
 
 var NavComponent = require('./nav')
@@ -8,11 +8,18 @@ var FooterComponent = require('./footer')
 
 
 var Prices = React.createClass({
+  getInitialState: function() {
+
+         return {
+            header: 'HINNASTO'
+
+          };
+     },
   render: function(){
     return (
       <div>
         <NavComponent/>
-        <Header/>
+        <Header header={this.state.header}/>
         <div className="prices-container">
           <h2>HIERONTAHOIDOT</h2>
           <div className="treatment">

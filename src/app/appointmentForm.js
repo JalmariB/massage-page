@@ -14,7 +14,7 @@ var AppointmentForm = React.createClass({
     return (
       <div>
       <div className="appointment-container">
-          <h2>TÄYTÄ ASIKASTIETOSI</h2>
+          <h2>TÄYTÄ ASIAKASTIETOSI</h2>
           <form id="customerForm" className="form-container" onSubmit={this.handleSubmit}>
               <label htmlFor="name">Name:</label>
                 <input id="name" type="text" required ref="newName" />

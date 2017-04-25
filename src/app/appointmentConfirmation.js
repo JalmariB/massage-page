@@ -43,7 +43,6 @@ getConfirmationDetails: function(){
 
 },
 componentDidMount: function() {
-  console.log('moro mitä äijä')
   {this.getConfirmationDetails()}
 }
       });

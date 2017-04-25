@@ -188,9 +188,11 @@ li {
 /***** Second Block ****/
 .second-block {
   border-top: 1px solid #6e6e6e;
-  padding: 150px 10%;
-  width: 100%;
-  text-align: left; }
+  padding: 150px 0;
+  width: 80%;
+  max-width: 700px;
+  text-align: left;
+  margin: 0 auto; }
   .second-block h2 {
     text-align: center; }
 
@@ -382,6 +384,44 @@ li {
 
 .prices-container .treatment:last-child:after {
   height: 0px; }
+
+.contact-container {
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px; }
+  .contact-container .contact-information {
+    margin: 60px 5%;
+    text-align: left; }
+  .contact-container .contact-information:after {
+    content: "";
+    margin: 40px auto 0 auto;
+    display: block;
+    height: 1px;
+    background-color: #ccc;
+    width: 60%; }
+  .contact-container .map iframe {
+    width: 100%;
+    height: 500px;
+    border: 20px solid transparent; }
+  .contact-container .phone:before {
+    font-family: 'FontAwesome';
+    content: "\f095";
+    font-size: 1.5em;
+    letter-spacing: 15px;
+    color: #777; }
+  .contact-container .email:before {
+    font-family: 'FontAwesome';
+    content: "\f0e0";
+    font-size: 1.5em;
+    letter-spacing: 15px;
+    color: #777; }
+  .contact-container .address:before {
+    font-family: 'FontAwesome';
+    content: "\f041";
+    font-size: 1.5em;
+    letter-spacing: 15px;
+    color: #777; }
 
 /*********** Footer *************/
 footer {

@@ -12,15 +12,11 @@ var FirstBlockComponent = require('./firstBlock')
 var SecondBlockComponent = require('./secondBlock')
 var Appointment = require('./appointment');
 var Prices = require('./prices');
+var Contact = require('./contact');
 
 
 
 var App = React.createClass ({
-  getInitialState: function() {
-         return {
-            customerInfo: ['Testi']
-          };
-     },
 
   render: function (){
     return(
@@ -28,6 +24,7 @@ var App = React.createClass ({
           <Route path={'/app'} component={MainComponent}></Route>
           <Route path={'/app/appointment'} component={Appointment}></Route>
           <Route path={'/app/prices'} component={Prices}></Route>
+          <Route path={'/app/contact'} component={Contact}></Route>
         </Router>
       );
   }
