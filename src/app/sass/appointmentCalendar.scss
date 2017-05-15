@@ -5,6 +5,11 @@
   max-width: 770px;
   text-align: center;
 
+  .week {
+    display: inline-block;
+    margin:10px ;
+  }
+
   ul {
     padding: 0;
   }
@@ -12,7 +17,9 @@
   .tuesday,
   .wednesday,
   .thursday,
-  .friday {
+  .friday,
+  .saturday,
+  .sunday {
     display: inline-block;
     border: 1px solid $gray;
     padding: 15px;
@@ -34,7 +41,9 @@
   .tuesday:hover,
   .wednesday:hover,
   .thursday:hover,
-  .friday:hover {
+  .friday:hover,
+  .saturday:hover,
+  .sunday:hover {
     background-color: $gray;
     color:$white;
   }

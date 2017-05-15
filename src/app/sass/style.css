@@ -187,7 +187,6 @@ li {
 
 /***** Second Block ****/
 .second-block {
-  border-top: 1px solid #6e6e6e;
   padding: 150px 0;
   width: 80%;
   max-width: 700px;
@@ -243,13 +242,18 @@ li {
   width: 95%;
   max-width: 770px;
   text-align: center; }
+  .calendar-container .week {
+    display: inline-block;
+    margin: 10px; }
   .calendar-container ul {
     padding: 0; }
   .calendar-container .monday,
   .calendar-container .tuesday,
   .calendar-container .wednesday,
   .calendar-container .thursday,
-  .calendar-container .friday {
+  .calendar-container .friday,
+  .calendar-container .saturday,
+  .calendar-container .sunday {
     display: inline-block;
     border: 1px solid #6e6e6e;
     padding: 15px;
@@ -262,19 +266,25 @@ li {
     .calendar-container .tuesday p,
     .calendar-container .wednesday p,
     .calendar-container .thursday p,
-    .calendar-container .friday p {
+    .calendar-container .friday p,
+    .calendar-container .saturday p,
+    .calendar-container .sunday p {
       margin: 0; }
     .calendar-container .monday :last-child,
     .calendar-container .tuesday :last-child,
     .calendar-container .wednesday :last-child,
     .calendar-container .thursday :last-child,
-    .calendar-container .friday :last-child {
+    .calendar-container .friday :last-child,
+    .calendar-container .saturday :last-child,
+    .calendar-container .sunday :last-child {
       font-size: 12px; }
   .calendar-container .monday:hover,
   .calendar-container .tuesday:hover,
   .calendar-container .wednesday:hover,
   .calendar-container .thursday:hover,
-  .calendar-container .friday:hover {
+  .calendar-container .friday:hover,
+  .calendar-container .saturday:hover,
+  .calendar-container .sunday:hover {
     background-color: #6e6e6e;
     color: #ffffff; }
   .calendar-container .freeTimes-container {

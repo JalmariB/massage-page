@@ -9,7 +9,7 @@ var Form = React.createClass({
 
       <form id="customerForm" className="form-container" onSubmit={this.handleSubmit}>
 
-      <label htmlFor="name">Name:</label>
+      <label htmlFor="name">Nimi:</label>
         <input id="name" type="text" required ref="newName" />
       <label htmlFor="email">Sähköposti:</label>
         <input id="email"type="email" required ref="newEmail"/>

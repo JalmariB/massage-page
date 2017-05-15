@@ -1,8 +1,10 @@
 var React = require('react');
 
 var ReactDOM = require('react-dom');
-
+var moment = require('moment');
+var firebase = require("firebase");
 import{Link} from 'react-router';
+
 
 var NavComponent = require('./nav')
 var AppointmentTime = require('./appointmentTime')
@@ -11,46 +13,32 @@ var AppointmentSelectDay = require('./appointmentSelectDay')
 var AppointmentForm = require('./appointmentForm')
 var AppointmentConfirmation = require('./appointmentConfirmation')
 var FooterComponent = require('./footer')
-
 var Appointment = React.createClass({
+
+
   getInitialState: function() {
 
-
-      // var d = new Date();
-      // var blaa = d.getTime()  - ((24*(d.getDay()-1) ) *60 *60 *1000)
-      // var monday = new Date(blaa)
-      //
-      //
-      //
-      // for (var i = 1; i <= 5; i++){
-      //   var d = new Date();
-      //   var firstDayOnWeek = d.getTime()  - ((24*(d.getDay()- i) ) *60 *60 *1000)
-      //   var day = new Date(firstDayOnWeek)
-      //
-      //
-      //
-      // }
          return {
             customerInfo: [],
             componentTime: true,
             componentSelectDay: false,
             appointmentForm: false,
-            appointmentConfirmation: false,
-
-
+            appointmentConfirmation: false
           };
      },
 
   render: function(){
 
+    console.log(this.state.week)
     return (
+
       <div>
         <NavComponent />
         <AppointmentHeaderComponent />
         { this.state.componentTime ? <AppointmentTime  newState={this.newState} getTreatment={this.getTreatment} /> : null}
-        { this.state.componentSelectDay ? <AppointmentSelectDay days={this.state.days} newState={this.newState} clearTreatment={this.clearTreatment} /> : null}
+        { this.state.componentSelectDay ? <AppointmentSelectDay newState={this.newState} clearTreatment={this.clearTreatment} /> : null}
         { this.state.appointmentForm ? <AppointmentForm newState={this.newState} formDetails={this.formDetails} clearCustomerInfo={this.clearCustomerInfo}/> : null}
-        { this.state.appointmentConfirmation ? <AppointmentConfirmation setCustomerInfo={this.setCustomerInfo} newState={this.newState} clearCustomerInfo={this.clearCustomerInfo} /> : null}
+        { this.state.appointmentConfirmation ? <AppointmentConfirmation sendToFireBase={this.sendToFireBase} setCustomerInfo={this.setCustomerInfo} newState={this.newState} clearCustomerInfo={this.clearCustomerInfo} /> : null}
         <FooterComponent />
       </div>
     );
@@ -68,7 +56,7 @@ var Appointment = React.createClass({
       console.log(this.state.days);
 
   },
-  setWeeks: function(){
+  setWeek: function(){
 
   },
 
@@ -106,8 +94,9 @@ getTreatment:function(treatment){
         document.getElementById("customerEmail").innerHTML = this.state.customerInfo[2];
         document.getElementById("customerPhone").innerHTML = this.state.customerInfo[3];
   },
+sendToFireBase: function(){
 
-
+}
 });
 
 

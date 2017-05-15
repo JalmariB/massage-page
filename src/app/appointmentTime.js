@@ -23,20 +23,24 @@ var PointmentStepOne = React.createClass({
     );
   },
 halfHour: function(){
-  this.props.newState(false, true, false);
+  this.props.newState(false, true, false, false);
   this.props.getTreatment('30 min');
+
 },
 fortyFive: function(){
-  this.props.newState(false, true, false);
+  this.props.newState(false, true, false, false);
   this.props.getTreatment('45 min');
+
 },
 hour: function(){
-  this.props.newState(false, true, false);
+  this.props.newState(false, true, false, false);
   this.props.getTreatment('60 min');
+
 },
 hourHalf: function(){
-  this.props.newState(false, true, false);
+  this.props.newState(false, true, false, false);
   this.props.getTreatment('90 min');
+
 }
 
 });

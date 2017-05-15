@@ -23,7 +23,7 @@ var AppointmentConfirmation = React.createClass ({
                   </ul>
                   <div className="buttons-container">
                     <button onClick={this.backToForm} className="secondary-button">Takaisin</button>
-                    <button className="primary-button">Vahvista hieronta</button>
+                    <button onClick={this.confirmOrder} className="primary-button">Vahvista hieronta</button>
                   </div>
             </div >
 
@@ -37,14 +37,18 @@ backToForm: function() {
   this.props.newState(false, false, true, false);
 
 },
+confirmOrder: function() {
+    this.props.sendToFireBase();
+},
 getConfirmationDetails: function(){
     this.props.setCustomerInfo();
 
-
 },
-componentDidMount: function() {
+
+componentDidMount() {
   {this.getConfirmationDetails()}
 }
+
       });
 
 module.exports = AppointmentConfirmation;

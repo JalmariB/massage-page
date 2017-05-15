@@ -25,7 +25,7 @@ var Contact = React.createClass ({
               <div className="contact-container">
                   <div className="contact-information">
                     <p className="phone">050 6966680</p>
-                    <p className="email">janne.berg@hierontatereapeutti.fi</p>
+                    <p className="email">janne.berg@hierontaterapeutti.fi</p>
                     <p className="address">Aleksanterinkatu 29 B 33</p>
                   </div>
                   <div className="map">
