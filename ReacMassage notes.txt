@@ -384,3 +384,24 @@ for (var i = 1; i <= 4; i++){
 	if(newDate.getDay() !== 6 && newDate.getDate() !== 7)
 	console.log(newDate)
 }
+
+
+
+
+
+
+firebaseRef.child(`users/${uid}/todos`).push(todo);
+
+new messages
+[1:21] 
+var blaa = fireBaseRef.child(polku/jonnekin).push(jotain)
+firebaseRef.child(`users/${uid}/todos`).push(todo);
+
+new messages
+[1:21] 
+var blaa = fireBaseRef.child(polku/jonnekin).push(jotain)
+
+[1:21] 
+blaa.then(() => { callback()});
+[1:21] 
+blaa.then(() => { callback()});
