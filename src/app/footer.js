@@ -13,7 +13,7 @@ var FooterComponent = React.createClass({
           </div>
           <div className="contact-footer-container">
             <p><span>Sähköposti:</span>hierontaterapeutti.janne.berg@gmail.com</p>
-            <p><span>Puh:</span> 050 378 0600</p>
+            <p><span>Puh:</span> 050 806 0600</p>
             <p><span>Osoite:</span> Töölö</p>
           </div>
 

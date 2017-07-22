@@ -45,37 +45,17 @@ var App = React.createClass ({
 class MainComponent extends Component {
 
 
-  constructor(){
-    super();
-    this.state= {
-      speed:10
-    };
-
-  }
-  componentDidMount() {
-
-          const dbRefObject = firebase.database().ref('object');
-
-       dbRefObject.on('value', snap => console.log(snap.val()));
-
-
-  }
-
   render(){
     return(
         <div>
           <NavComponent/>
-          <button onClick={this.sendToFireBase}>testi</button>
-          <h1>{this.state.speed}</h1>
           <FirstBlockComponent/>
           <SecondBlockComponent/>
           <FooterComponent/>
         </div>
       );
   }
-  sendToFireBase(){
 
-  }
 
 }
 

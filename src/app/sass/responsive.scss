@@ -1,0 +1,95 @@
+@media screen and (min-width: 768px) {
+
+
+/*****  NAVIGATION DESKTOP *****/
+
+  #header-container {
+    text-align: right;
+    top:0px;
+    width: 100%;
+    height: 60px;
+    left:-5%;
+    background-color:transparent;
+    padding-top:10px;
+
+
+    .hamburger-icon {
+      display: none;
+    }
+
+    .nav-item {
+      text-align: center;
+      display: inline-block;
+      padding:10px;
+      width: 120px;
+      color:$lightgray;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease ;
+    }
+    .nav-item:hover {
+      background-color: transparent;
+    }
+    .nav-item:after {
+      transition: 0.3s all;
+      content:"";
+      display: block;
+      width: 70px;
+      height: 2px;
+      margin:10px auto;
+      background-color: transparent;
+
+    }
+    .nav-item:hover:after {
+      content:"";
+
+      background-color: $orange;
+    }
+
+  }
+
+
+
+
+}
+
+
+
+@media screen and (min-width: 1024px) {
+
+/*****  LOGO *****/
+  .hexagon {
+    left: 5%;
+  }
+
+
+
+
+/*****  FIRST BLOCK *****/
+  .first-block {
+      padding: 320px 0 480px 0;
+      width: 100%;
+      text-align: center;
+      background-image: url(../img/jump.jpeg);
+      color: #ffffff;
+      background-color: #222;
+  }
+
+
+/*****  PRICES PAGE *****/
+
+.prices-container {
+  max-width: 800px;
+
+  .treatment {
+    padding: 20px;
+     width: 50%;
+     display: inline-block;
+  }
+  .treatment:last-child:after {
+    height: 1px;
+  }
+}
+
+
+}

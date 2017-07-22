@@ -10,7 +10,7 @@
   background-color:$black;
   transition:0.2s all;
   z-index: 1;
-  padding-top: 100px;
+  padding-top:130px;
 }
 .hamburger-icon {
   position: fixed;
@@ -24,36 +24,78 @@
 .hamburger-icon:hover {
   color:#222;
 }
-.logo {
-  width: 60px;
+
+
+/***** logo ****/
+
+.hexagon {
+  width: 74px;
+  height: 40px;
+  background: #4d4d4d;
   position: fixed;
-  top:20px;
-  left:40px;
-  -webkit-filter: grayscale(100%);
-  -webkit-transition: .5s ease-in-out;
-  -moz-filter: grayscale(100%);
-  -moz-transition: .5s ease-in-out;
-  -o-filter: grayscale(100%);
-  -o-transition: .5s ease-in-out;
+  top: 40px;
+  left: 45px;
+  text-align: center;
+  line-height: 42px;
+  font-size: 2.3em;
+  transition: 0.2s all;
 }
-.logo:hover {
-  width: 60px;
-  position: fixed;
-  top:20px;
-  left:40px;
-  -webkit-filter: grayscale(100%);
-  -webkit-transition: .5s ease-in-out;
-  -moz-filter: grayscale(100%);
-  -moz-transition: .5s ease-in-out;
-  -o-filter: grayscale(100%);
-  -o-transition: .5s ease-in-out;
+.hexagon:before {
+	content: "";
+	position: absolute;
+	top: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+  border-left: 37px solid transparent;
+  border-right: 37px solid transparent;
+	border-bottom: 25px solid $black;
+  transition: 0.2s all;
 }
+.hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+  border-left: 37px solid transparent;
+  border-right: 37px solid transparent;
+	border-top: 25px solid  $black;
+  transition: 0.2s all;
+}
+.hexagon:hover {
+  background-color: $orange;
+
+}
+.hexagon:hover::before {
+  border-bottom: 25px solid   $orange;
+}
+.hexagon:hover::after {
+  border-top: 25px solid   $orange;
+}
+
+.hover-logo {
+  transition: 2s all;
+  background-color: $orange;
+}
+.hover-logo::after {
+  transition: 2s all;
+  border-top: 25px solid   $orange;
+}
+.hover-logo::before {
+  transition: 2s all;
+  border-bottom: 25px solid   $orange;
+}
+
+
 
 .nav-item {
   display: block;
   padding:20px;
-  width: 180;
+  width: 180px;
   cursor: pointer;
+
 }
 .nav-item:hover {
   transition: 0.2s all;

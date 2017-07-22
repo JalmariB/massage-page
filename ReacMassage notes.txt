@@ -213,7 +213,8 @@ app componenttiin lis�t��n reitti, eli esim.
 
 D:\massage-page\src\app\sass>sass style.scss style.css
 
-
+*seuraa sass filua*
+sass --watch style.scss:style.css
 
 
 
@@ -393,17 +394,17 @@ for (var i = 1; i <= 4; i++){
 firebaseRef.child(`users/${uid}/todos`).push(todo);
 
 new messages
-[1:21] 
+[1:21]
 var blaa = fireBaseRef.child(polku/jonnekin).push(jotain)
 firebaseRef.child(`users/${uid}/todos`).push(todo);
 
 new messages
-[1:21] 
+[1:21]
 var blaa = fireBaseRef.child(polku/jonnekin).push(jotain)
 
-[1:21] 
+[1:21]
 blaa.then(() => { callback()});
-[1:21] 
+[1:21]
 blaa.then(() => { callback()});
 /************************************************* jompen filut ************************
 
@@ -513,3 +514,11 @@ console.log('Note id', newNoteRef.key);
 // firebaseRef.child('user').update({
 //   name: 'Joonas'
 // })
+
+TEE ***************
+
+- monday.js -----> komponentti mikä toimii jokaisessa päivässä, eli esim times.js
+
+- laita ajat muuttumaan niin että jos tilaa esim. 90min hieronnan niin kolme palkkia häviää eikä vaan yksi
+
+- currentTarget ongelma kun laitetaan kantaan päivämäärä, eli valitsee p elementin väärin

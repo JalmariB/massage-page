@@ -13,6 +13,10 @@
   ul {
     padding: 0;
   }
+  .active-day {
+    background-color: $gray !important;
+    color:$white;
+  }
   .monday,
   .tuesday,
   .wednesday,
@@ -22,8 +26,8 @@
   .sunday {
     display: inline-block;
     border: 1px solid $gray;
-    padding: 15px;
-    margin:10px 2% 10px 2%;
+    padding: 15px 10px;
+    margin:10px 1%;
     background-color: $white;
     border-radius: 10px;
     transition: 0.2s all;
@@ -46,6 +50,11 @@
   .sunday:hover {
     background-color: $gray;
     color:$white;
+  }
+
+  .saturday,
+  .sunday {
+    display: none;
   }
 
 .freeTimes-container {

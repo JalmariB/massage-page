@@ -7,11 +7,12 @@ var NavComponent = React.createClass({
     function toggleClassNav (){
       var menu = document.querySelector('#header-container')
       menu.classList.toggle('hamburger-in');
+      $('.hexagon').toggleClass('hover-logo');
     }
     return(
       <div>
         <header id="header-container">
-          <Link to={'/app/'}><img className="logo" src="img/Logo.svg"></img></Link>
+          <Link to={'/app/'}><div className="hexagon">B</div></Link>
           <div onClick={toggleClassNav} className=" hamburger-icon "><i className="fa fa-bars"></i></div>
           <div><NavTitlesComponent /></div>
         </header>

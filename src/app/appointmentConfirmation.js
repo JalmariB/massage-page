@@ -12,11 +12,12 @@ var AppointmentConfirmation = React.createClass ({
 
     return (
       <div >
-
             <div className="appointment-confirmation-container">
                   <h2>TARKISTA TIEDOT</h2>
                   <ul className="customer-details">
                       <li><p><strong>Hieronta:</strong> </p><p id="customerTreatment"></p></li>
+                      <li><p><strong>Ajankohta:</strong> </p><p id="customerDate"></p></li>
+                      <li><p><strong>Aika:</strong> </p><p id="customerTime"></p></li>
                       <li><p><strong>Nimi:</strong> </p><p id="customerName"></p></li>
                       <li><p><strong>Sähköposti:</strong> </p><p id="customerEmail"></p></li>
                       <li><p><strong>Puhelinnumero:</strong> </p><p id="customerPhone"></p></li>
@@ -32,6 +33,8 @@ var AppointmentConfirmation = React.createClass ({
 
         },
 
+
+
 backToForm: function() {
   this.props.clearCustomerInfo();
   this.props.newState(false, false, true, false);
@@ -39,6 +42,7 @@ backToForm: function() {
 },
 confirmOrder: function() {
     this.props.sendToFireBase();
+    this.props.newState(false, false, false, false, true);
 },
 getConfirmationDetails: function(){
     this.props.setCustomerInfo();

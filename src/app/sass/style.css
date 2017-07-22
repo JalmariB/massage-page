@@ -124,7 +124,7 @@ li {
   background-color: #4d4d4d;
   transition: 0.2s all;
   z-index: 1;
-  padding-top: 100px; }
+  padding-top: 130px; }
 
 .hamburger-icon {
   position: fixed;
@@ -138,34 +138,68 @@ li {
 .hamburger-icon:hover {
   color: #222; }
 
-.logo {
-  width: 60px;
+/***** logo ****/
+.hexagon {
+  width: 74px;
+  height: 40px;
+  background: #4d4d4d;
   position: fixed;
-  top: 20px;
-  left: 40px;
-  -webkit-filter: grayscale(100%);
-  -webkit-transition: .5s ease-in-out;
-  -moz-filter: grayscale(100%);
-  -moz-transition: .5s ease-in-out;
-  -o-filter: grayscale(100%);
-  -o-transition: .5s ease-in-out; }
+  top: 40px;
+  left: 45px;
+  text-align: center;
+  line-height: 42px;
+  font-size: 2.3em;
+  transition: 0.2s all; }
 
-.logo:hover {
-  width: 60px;
-  position: fixed;
-  top: 20px;
-  left: 40px;
-  -webkit-filter: grayscale(100%);
-  -webkit-transition: .5s ease-in-out;
-  -moz-filter: grayscale(100%);
-  -moz-transition: .5s ease-in-out;
-  -o-filter: grayscale(100%);
-  -o-transition: .5s ease-in-out; }
+.hexagon:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 37px solid transparent;
+  border-right: 37px solid transparent;
+  border-bottom: 25px solid #4d4d4d;
+  transition: 0.2s all; }
+
+.hexagon:after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 37px solid transparent;
+  border-right: 37px solid transparent;
+  border-top: 25px solid #4d4d4d;
+  transition: 0.2s all; }
+
+.hexagon:hover {
+  background-color: #ffa31a; }
+
+.hexagon:hover::before {
+  border-bottom: 25px solid #ffa31a; }
+
+.hexagon:hover::after {
+  border-top: 25px solid #ffa31a; }
+
+.hover-logo {
+  transition: 2s all;
+  background-color: #ffa31a; }
+
+.hover-logo::after {
+  transition: 2s all;
+  border-top: 25px solid #ffa31a; }
+
+.hover-logo::before {
+  transition: 2s all;
+  border-bottom: 25px solid #ffa31a; }
 
 .nav-item {
   display: block;
   padding: 20px;
-  width: 180;
+  width: 180px;
   cursor: pointer; }
 
 .nav-item:hover {
@@ -247,6 +281,9 @@ li {
     margin: 10px; }
   .calendar-container ul {
     padding: 0; }
+  .calendar-container .active-day {
+    background-color: #6e6e6e !important;
+    color: #ffffff; }
   .calendar-container .monday,
   .calendar-container .tuesday,
   .calendar-container .wednesday,
@@ -256,8 +293,8 @@ li {
   .calendar-container .sunday {
     display: inline-block;
     border: 1px solid #6e6e6e;
-    padding: 15px;
-    margin: 10px 2% 10px 2%;
+    padding: 15px 10px;
+    margin: 10px 1%;
     background-color: #ffffff;
     border-radius: 10px;
     transition: 0.2s all;
@@ -287,6 +324,9 @@ li {
   .calendar-container .sunday:hover {
     background-color: #6e6e6e;
     color: #ffffff; }
+  .calendar-container .saturday,
+  .calendar-container .sunday {
+    display: none; }
   .calendar-container .freeTimes-container {
     display: block;
     width: 80%;
@@ -375,6 +415,13 @@ li {
   .appointment-confirmation-container .buttons-container {
     width: 70%; }
 
+.appointment-result-container {
+  width: 90%;
+  max-width: 770px;
+  margin: 0 auto; }
+  .appointment-result-container .secondary-button {
+    float: right; }
+
 .prices-container {
   max-width: 600px;
   margin: 0 auto;
@@ -438,7 +485,7 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  padding: 20px 0 20px 5%;
+  padding: 20px 5% 20px 5%;
   background-color: #ffffff;
   color: #777;
   text-align: center; }
@@ -452,12 +499,12 @@ footer {
   footer .some-footer-container p {
     font-size: 2.5em;
     transition: 0.2s all;
-    margin: 10px; }
+    margin: 10px;
+    cursor: pointer; }
   footer .some-footer-container p:hover {
     color: #ffa31a; }
   footer .copyright {
     text-align: center;
-    padding: 0 5% 0 0;
     font-size: 11px; }
 
 footer::before {
@@ -467,5 +514,63 @@ footer::before {
   height: 1px;
   width: 90%;
   background-color: #ccc; }
+
+@media screen and (min-width: 768px) {
+  /*****  NAVIGATION DESKTOP *****/
+  #header-container {
+    text-align: right;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    left: -5%;
+    background-color: transparent;
+    padding-top: 10px; }
+    #header-container .hamburger-icon {
+      display: none; }
+    #header-container .nav-item {
+      text-align: center;
+      display: inline-block;
+      padding: 10px;
+      width: 120px;
+      color: #777;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease 0s;
+      -webkit-transition: all 0.3s ease; }
+    #header-container .nav-item:hover {
+      background-color: transparent; }
+    #header-container .nav-item:after {
+      transition: 0.3s all;
+      content: "";
+      display: block;
+      width: 70px;
+      height: 2px;
+      margin: 10px auto;
+      background-color: transparent; }
+    #header-container .nav-item:hover:after {
+      content: "";
+      background-color: #ffa31a; } }
+@media screen and (min-width: 1024px) {
+  /*****  LOGO *****/
+  .hexagon {
+    left: 5%; }
+
+  /*****  FIRST BLOCK *****/
+  .first-block {
+    padding: 320px 0 480px 0;
+    width: 100%;
+    text-align: center;
+    background-image: url(../img/jump.jpeg);
+    color: #ffffff;
+    background-color: #222; }
+
+  /*****  PRICES PAGE *****/
+  .prices-container {
+    max-width: 800px; }
+    .prices-container .treatment {
+      padding: 20px;
+      width: 50%;
+      display: inline-block; }
+    .prices-container .treatment:last-child:after {
+      height: 1px; } }
 
 /*# sourceMappingURL=style.css.map */
