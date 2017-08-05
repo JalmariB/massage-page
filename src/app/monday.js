@@ -8,12 +8,12 @@ var MondayComponent = React.createClass({
   getInitialState: function() {
 
 
-    var times = ['10:00-10:30', '10:30-11:00', '11:00-11:30', '11:30-12:00', '12:00-12:30'];
+    //  var times = ['10:00-10:30', '10:30-11:00', '11:00-11:30', '11:30-12:00', '12:00-12:30'];
 
 
          return {
 
-                  mondayTimes: times,
+                  // mondayTimes: times,
 
           };
      },
@@ -22,14 +22,15 @@ var MondayComponent = React.createClass({
     return (
       <div>
       <ul className="monday-times">
-        <li className="monday-times-first ma"  onClick={this.getTimeMonday}>{this.state.mondayTimes[0]}</li>
-        <li className="monday-times-first ti" onClick={this.getTimeMonday}>{this.state.mondayTimes[1]}</li>
-        <li className="monday-times-first ke" onClick={this.getTimeMonday}>{this.state.mondayTimes[2]}</li>
-        <li className="monday-times-first to" onClick={this.getTimeMonday}>{this.state.mondayTimes[3]}</li>
-        <li className="monday-times-first pe" onClick={this.getTimeMonday}>{this.state.mondayTimes[4]}</li>
+        <li className="monday-times-first first-time"  onClick={this.getTimeMonday}>{this.props.blockTimes[0]}</li>
+        <li className="monday-times-first second-time" onClick={this.getTimeMonday}>{this.props.blockTimes[1]}</li>
+        <li className="monday-times-first third-time" onClick={this.getTimeMonday}>{this.props.blockTimes[2]}</li>
+        <li className="monday-times-first fourth-time" onClick={this.getTimeMonday}>{this.props.blockTimes[3]}</li>
+        <li className="monday-times-first fifth-time" onClick={this.getTimeMonday}>{this.props.blockTimes[4]}</li>
       </ul>
       </div>
     );
+
   },
   getTimeMonday: function(e) {
     var currentTarget = $(e.target).text();

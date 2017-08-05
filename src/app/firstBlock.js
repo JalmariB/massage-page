@@ -10,6 +10,9 @@ var FirstBlockComponent = React.createClass({
           <p>Varaa aika nopeasti ja kätevästi netin kautta.</p>
           <Link to={'/app/appointment'}><button className="primary-button">Ajanvaraukseen</button></Link>
         </div>
+        <video autoPlay loop id="video-background" muted >
+        <source src="img/video.mp4" type="video/mp4"></source>
+        </video>
       </div>
 
     );

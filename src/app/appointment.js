@@ -26,7 +26,12 @@ var Appointment = React.createClass({
             appointmentForm: false,
             appointmentConfirmation: false,
             appointmentResult: false,
-            testi: 2
+            halfHourTimes: ['10:00-10:30', '11:00-11:30', '12:00-12:30', '13:00-13:30', '14:00-14:30'],
+            fortyFiveTimes: ['10:00-10:45', '11:00-11:45', '12:00-12:45', '13:00-13:45', '14:00-14:45'],
+            hourTimes: ['10:00-11:00', '11:00-12:00', '12:00-13:00', '13:00-14:00', '14:00-15:00'],
+            hourHalfTimes: ['10:00-11:30', '12:00-13:30', '14:00-15:30'],
+            testi: 2,
+            blockTimes: []
           };
      },
 
@@ -38,7 +43,7 @@ var Appointment = React.createClass({
         <NavComponent />
         <AppointmentHeaderComponent />
         { this.state.componentTime ? <AppointmentTime  newState={this.newState} getTreatment={this.getTreatment} /> : null}
-        { this.state.componentSelectDay ? <AppointmentSelectDay treatmentTimes={this.treatmentTimes} newState={this.newState} clearTreatment={this.clearTreatment} /> : null}
+        { this.state.componentSelectDay ? <AppointmentSelectDay blockTimes={this.state.blockTimes} treatmentDate={this.treatmentDate} treatmentTimes={this.treatmentTimes} newState={this.newState} clearTreatment={this.clearTreatment} /> : null}
         { this.state.appointmentForm ? <AppointmentForm newState={this.newState} formDetails={this.formDetails} clearCustomerInfo={this.clearCustomerInfo}/> : null}
         { this.state.appointmentConfirmation ? <AppointmentConfirmation sendToFireBase={this.sendToFireBase} setCustomerInfo={this.setCustomerInfo} newState={this.newState} clearCustomerInfo={this.clearCustomerInfo} /> : null}
         { this.state.appointmentResult ? <AppointmentResult customerInfo={this.state.customerInfo}  newState={this.newState} /> : null}
@@ -61,16 +66,22 @@ var Appointment = React.createClass({
   },
 
 
-getTreatment:function(treatment){
+getTreatment:function(treatment, time1, time2, time3, time4, time5){
+  // console.log('lista  ')
     var updatedCustomerInfo = this.state.customerInfo;
+    var updatedBlockTimes = this.state.blockTimes;
     updatedCustomerInfo.push(treatment);
+    updatedBlockTimes.push(time1, time2, time3, time4, time5)
     this.setState({
-      customerInfo: updatedCustomerInfo
+      customerInfo: updatedCustomerInfo,
+      blockTimes: updatedBlockTimes
     })
+    // console.log(this.state.blockTimes)
 },
   clearTreatment: function(){
     this.setState({
-      customerInfo: []
+      customerInfo: [],
+      blockTimes: []
     })
   },
   clearCustomerInfo: function(){
@@ -84,13 +95,25 @@ getTreatment:function(treatment){
   treatmentTimes: function(time) {
     var setTreatmentTimes = this.state.customerInfo;
     setTreatmentTimes.push(time);
+    var customerInfoDeleteIndex = setTreatmentTimes.indexOf(1);
+
+    // if (setTreatmentTimes.length === 3) {
+    //   console.log('> 1')
+    //   setTreatmentTimes.splice(1, 1);
+    // }
+
     this.setState ({
         customerInfo: setTreatmentTimes
     })
+
   },
-  treatmentDay: function(date) {
+  treatmentDate: function(date) {
     var setTreatmentDate = this.state.customerInfo;
     setTreatmentDate.push(date);
+    if (setTreatmentDate.length === 3) {
+      setTreatmentDate.splice(1, 1);
+    }
+    console.log(this.state.customerInfo)
     this.setState ({
         customerInfo: setTreatmentDate
     })

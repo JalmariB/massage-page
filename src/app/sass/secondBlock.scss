@@ -1,13 +1,16 @@
 /***** Second Block ****/
 
 .second-block {
+  background-color: $white;
   padding:150px 0;
-  width: 80%;
-  max-width: 700px;
   text-align: left;
   margin:0 auto;
 
   h2 {
     text-align: center;
+  }
+  p {
+    width: 80%;
+    margin:30px auto;
   }
 }

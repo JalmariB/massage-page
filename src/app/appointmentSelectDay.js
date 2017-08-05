@@ -21,8 +21,7 @@ var AppointmentSelectDayComponent = React.createClass({
     var d = new Date();
     var n = d.getDay();
 
-    // console.log(d)
-    console.log(n)
+    // console.log(n)
 
     if (n === 0){
       startDay = -7;
@@ -46,8 +45,8 @@ var AppointmentSelectDayComponent = React.createClass({
       startDay = -1;
     }
 
-var day = localLocale.add(startDay + 1, 'day').format('L');
-days.push(day)
+    var day = localLocale.add(startDay + 1, 'day').format('L');
+    days.push(day)
     for (var i = 1; i < 8; i++) {
       var day = localLocale.add(1, 'day').format('L');
       days.push(day);
@@ -55,13 +54,35 @@ days.push(day)
 
       var firstWeek = localLocale.isoWeek() - 1;
       var listId = 0;
-
+      this.checkCurrentDay()
          return { showElementMonday: true,
                   week: firstWeek,
                   day: days,
                   startDay:startDay,
                   id:listId
           };
+     },
+
+     checkCurrentDay: function() {
+       var localLocale = moment().locale('fi');
+       var currentDay = localLocale.format('L');
+
+       if ($('.monday').text() === 'Ma' + currentDay) {
+         $('.monday').addClass('active-day')
+       }
+       if ($('.tuesday').text() === 'Ti' + currentDay) {
+         $('.tuesday').addClass('active-day')
+
+       }
+       if ($('.wednesday').text() === 'Ke' + currentDay) {
+         $('.wednesday').addClass('active-day')
+       }
+       if ($('.thursday').text() === 'To' + currentDay) {
+         $('.thursday').addClass('active-day')
+       }
+       if ($('.friday').text() === 'Pe' + currentDay) {
+         $('.friday').addClass('active-day')
+       }
      },
 
      addWeek: function(){
@@ -87,12 +108,19 @@ days.push(day)
        else {
          var newWeek = this.state.week + 1;
        }
+       var currentWeek = moment().isoWeek();
+       if (newWeek <= currentWeek){
+            $('.fa-chevron-left').css({
+                                     opacity: 1,
+                                     pointerEvents: "auto"
+                                    })
+       }
+
        this.setState({
          week: newWeek,
          day:days,
          startDay: newStartDay
        })
-
      },
        backWeek: function(){
 
@@ -117,23 +145,36 @@ days.push(day)
          else {
            var newWeek = this.state.week - 1;
          }
+         var timeBlocks = this.props.halfHourTimes; //???
+         var currentWeek = moment().isoWeek();
+         if (newWeek < currentWeek){
+              $('.fa-chevron-left').css({
+                                       opacity: 0.5,
+                                       pointerEvents: "none"
+                                      })
+         }
+
          this.setState({
            week: newWeek,
            day:days,
            startDay: reduceStartDay
 
          })
+
+
+
+
      },
 
 
   render: function (){
-
+      console.log(this.props.testiAjat)
     return(
       <div>
             <div className="calendar-container">
             <h2>VALITSE AIKA</h2>
             <div><p>Viikko</p><i onClick={this.backWeek} className="fa fa-chevron-left"></i><p className="week"> {this.state.week}</p><i onClick={this.addWeek} className="fa fa-chevron-right"></i></div>
-                <ul>
+                <ul className="days-container">
                   <li className="monday" onClick={this.showElementMonday} onClick={this.day} ><p>Ma</p><p>{this.state.day[0]}</p></li>
                   <li className="tuesday" onClick={this.showElementTuesday} onClick={this.day}><p>Ti</p><p>{this.state.day[1]}</p></li>
                   <li className="wednesday" onClick={this.showElementTuesday} onClick={this.day}><p>Ke</p><p>{this.state.day[2]} </p></li>
@@ -143,7 +184,7 @@ days.push(day)
                   <li className="sunday"><p>Su</p><p>{this.state.day[6]}</p></li>
                 </ul>
                 <div className="freeTimes-container">
-                    { this.state.showElementMonday ? <MondayComponent showElementMonday={this.showElementMonday} mondayTimes={this.mondayTimes} continueToForm={this.continueToForm} /> : null}
+                    { this.state.showElementMonday ? <MondayComponent blockTimes={this.props.blockTimes} showElementMonday={this.showElementMonday} mondayTimes={this.mondayTimes} continueToForm={this.continueToForm} /> : null}
                     { this.state.showElementTuesday ? <TuesdayComponent /> : null }
                 </div>
                 <div className="buttons-container">
@@ -158,60 +199,194 @@ days.push(day)
     this.props.treatmentTimes(time);
   },
   day: function(e) {
-    var times = ['10:00-10:30', '10:30-11:00', '11:00-11:30', '12:00-12:00', '13:00-13:30'];
-    var currentTarget = $(e.target).text();
+    // var times = ['10:00-10:30', '10:30-11:00', '11:00-11:30', '12:00-12:00', '13:00-13:30'];
+    var currentDateText = $(e.currentTarget).text();
     var currentLiElement = $(e.currentTarget);
-    var dateToFirebase = currentTarget.replace(/\./g,'');
+    var dateToFirebase = currentDateText.replace(/\./g,'');
     var dateAndTime = [];
     var firebaseRef = firebase.database().ref();
-    var firebaseRefGetTest = firebase.database().ref().child('customer/date/' + dateToFirebase);
+    var firebaseRefGetDate = firebase.database().ref().child('customer/date/' + dateToFirebase);
     var i = 0;
+
     $('li').removeClass('active-day')
     currentLiElement.addClass('active-day')
-     $('.ma').show()
-     $('.ti').show()
-     $('.ke').show()
-     $('.to').show()
-     $('.pe').show()
+    
+     $('.monday-times-first').show()
 
-              firebaseRefGetTest.on("child_added", snap => {
+              firebaseRefGetDate.on("child_added", snap => {
                 var time = snap.child('time').val();
+// console.log('päivämäärän ajat  ' + time)
+                if (time === '10:00-10:30'){
+                  console.log('if--30testi--- ' + firebaseRefGetDate + '   ' + time )
+                  $('.first-time').hide()
+                }
+                if (time === '11:00-11:30'){
 
-                if (time === '10:00-10:30') {
-                    $('.ma').hide();
+                  $('.second-time').hide()
                 }
-                if (time === '10:30-11:00') {
-                    $('.ti').hide();
+                if (time === '12:00-12:30'){
+
+                  $('.third-time').hide()
                 }
-                if (time === '11:00-11:30') {
-                    $('.ke').hide();
+                if (time === '13:00-13:30'){
+
+                  $('.fourth-time').hide()
                 }
-                if (time === '11:30-12:00') {
-                    $('.to').hide();
-                }
-                if (time === '12:00-12:30') {
-                    $('.pe').hide();
+                if (time === '14:00-14:30'){
+
+                  $('.fifth-time').hide()
                 }
 
+
+
+                if (time === '10:00-10:45'){
+                  $('.first-time').hide()
+                }
+                if (time === '11:00-11:45'){
+
+                  $('.second-time').hide()
+                }
+                if (time === '12:00-12:45'){
+
+                  $('.third-time').hide()
+                }
+                if (time === '13:00-13:45'){
+
+                  $('.fourth-time').hide()
+                }
+                if (time === '14:00-14:45'){
+
+                  $('.fifth-time').hide()
+                }
+
+
+
+
+
+                if (time === '10:00-11:00'){
+                  $('.first-time').hide()
+                }
+                if (time === '11:00-12:00'){
+
+                  $('.second-time').hide()
+                }
+                if (time === '12:00-13:00'){
+
+                  $('.third-time').hide()
+                }
+                if (time === '13:00-14:00'){
+
+                  $('.fourth-time').hide()
+                }
+                if (time === '14:00-15:00'){
+
+                  $('.fifth-time').hide()
+                }
+
+
+                // if (time === '12:00-12:30'){
+                //   console.log('if--30testi--- ' + firebaseRefGetDate + '   ' + time )
+                //   // $('.first-time').hide()
+                // }
+                // if (time === '12:00-12:45'){
+                //   console.log('if--45testi--- ' + firebaseRefGetDate + '   ' + time )
+                //   $('.first-time').hide()
+                // }
+                // if (time === '12:00-12:30'){
+                //   console.log('if-- 30min --- ' + firebaseRefGetDate + '   ' + time )
+                // }
+
+                //
+                // if (time === '10:00-10:30') {
+                //     if ($('.first-time').text() === '10:00-10:30' ){
+                //       $('.first-time').hide()
+                //     }
+                // }
+                // if (time === '10:00-10:45') {
+                //     if ($('.first-time').text() === '10:00-10:45'){
+                //       $('.first-time').hide()
+                //     }
+                // }
+                // if (time === '10:00-11:00') {
+                //     if ($('.first-time').text() === '10:00-11:00'){
+                //       $('.first-time').hide()
+                //     }
+                // }
+
+
+                // if (time === '11:00-11:30' || time === '11:00-11:45' || time === '11:00-12:00') {
+                //     if ($('.first-time').text() === '11:00-11:30' || $('.first-time').text() === '11:00-11:45' || $('.first-time').text() === '11:00-12:00' ){
+                //       $('.second-time').hide()
+                //     }
+                // }
+                // if (time === '12:00-12:30' || time === '12:00-12:45' || time === '12:00-13:00') {
+                //     if ($('.first-time').text() === '12:00-12:30' || $('.first-time').text() === '12:00-12:45' || $('.first-time').text() === '12:00-13:00' ){
+                //       $('.third-time').hide()
+                //     }
+                // }
+                // if (time === '13:00-13:30' || time === '13:00-13:45' || time === '13:00-14:00') {
+                //     if ($('.first-time').text() === '13:00-13:30' || $('.first-time').text() === '13:00-13:45' || $('.first-time').text() === '13:00-14:00' ){
+                //       $('.fourth-time').hide()
+                //     }
+                // }
+                // if (time === '14:00-14:30' || time === '14:00-14:45' || time === '14:00-15:00') {
+                //     if ($('.first-time').text() === '14:00-14:30' || $('.first-time').text() === '14:00-14:45' || $('.first-time').text() === '14:00-15:00' ){
+                //       $('.fifth-time').hide()
+                //     }
+                // }
+                // if (time === '15:00-15:30' || time === '15:00-15:45' || time === '15:00-16:00') {
+                //     if ($('.first-time').text() === '15:00-15:30' || $('.first-time').text() === '15:00-15:45' || $('.first-time').text() === '15:00-16:00' ){
+                //       $('.first-time').hide()
+                //     }
+                // }
+                // if (time === '10:00-10:45') {
+                //     if ($('.first-time').text() === '10:00-10:45' ){
+                //       $('.first-time').hide()
+                //     }
+                // }
+                // if (time === '10:00-11:00') {
+                //     if ($('.first-time').text() === '10:00-11:00' ){
+                //       $('.first-time').hide()
+                //     }
+                // }
+                // if (time === '10:00-11:30') {
+                //     if ($('.first-time').text() === '10:00-11:00' ){
+                //       $('.first-time').hide()
+                //     }
+                // }
+
+                // if (time === '10:00-10:45') {
+                //
+                //       $('.first-time').hide()
+                //       $('.second-time').hide()
+                //
+                // }
+                //
+                // if (time === '11:00-11:30') {
+                //   if ($('.third-time').text() === '11:00-11:30'){
+                //     $('.third-time').hide()
+                //   }
+                // }
+                // if (time === '11:30-12:00') {
+                //   if ($('.fifth-time').text() === '11:00-11:30'){
+                //     $('.fourth-time').hide()
+                //   }
+                // }
+                // if (time === '12:00-12:30') {
+                //   if ($('.fifth-time').text() === '11:00-11:30'){
+                //     $('.fifth-time').hide()
+                //   }
+                // }
               })
 
-// setTimeout(function(){
-//
-//  var t = [];
-//   if (t[0] === 'ei löydy kannasta!'){
-//
-//
-// }; }, 5000);
+    // this.props.treatmentTimes(currentDateText);
 
-    this.props.treatmentTimes(currentTarget);
+        this.props.treatmentDate(currentDateText);
 
   },
   showElementMonday: function(t) {
       this.setState({ showElementMonday: true });
       this.setState({ showElementTuesday: false });
-
-
-
   },
   showElementTuesday: function() {
       this.setState({ showElementTuesday: true,
@@ -224,6 +399,9 @@ days.push(day)
   continueToForm: function(){
     this.props.newState(false, false, true)
   },
+  componentDidMount() {
+    this.checkCurrentDay()
+  }
 });
 
 module.exports = AppointmentSelectDayComponent;

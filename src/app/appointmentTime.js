@@ -24,24 +24,57 @@ var PointmentStepOne = React.createClass({
   },
 halfHour: function(){
   this.props.newState(false, true, false, false);
-  this.props.getTreatment('30 min');
+  var halfHourTimes = {
+    first: '10:00-10:30',
+    second: '11:00-11:30',
+    third:'12:00-12:30',
+    fourth:'13:00-13:30',
+    fifth:'14:00-14:30'
+    // first: '10:00-10:30',
+    // second: '10:30-11:00',
+    // third:'11:00-11:30',
+    // fourth:'11:30-12:00',
+    // fifth:'12:00-12:30'
+  }
+  this.props.getTreatment('30 min', halfHourTimes.first, halfHourTimes.second, halfHourTimes.third, halfHourTimes.fourth, halfHourTimes.fifth );
 
 },
 fortyFive: function(){
   this.props.newState(false, true, false, false);
-  this.props.getTreatment('45 min');
+
+  var fortyFiveTimes = {
+    first: '10:00-10:45',
+    second: '11:00-11:45',
+    third:'12:00-12:45',
+    fourth:'13:00-13:45',
+    fifth:'14:00-14:45'
+  }
+  this.props.getTreatment('45 min', fortyFiveTimes.first, fortyFiveTimes.second, fortyFiveTimes.third, fortyFiveTimes.fourth, fortyFiveTimes.fifth );
 
 },
 hour: function(){
   this.props.newState(false, true, false, false);
-  this.props.getTreatment('60 min');
 
+  var hourTimes = {
+    first: '10:00-11:00',
+    second: '11:00-12:00',
+    third:'12:00-13:00',
+    fourth:'13:00-14:00',
+    fifth:'14:00-15:00',
+  }
+  this.props.getTreatment('60 min', hourTimes.first, hourTimes.second, hourTimes.third, hourTimes.fourth, hourTimes.fifth );
 },
+
 hourHalf: function(){
   this.props.newState(false, true, false, false);
-  this.props.getTreatment('90 min');
 
-}
+  var hourHalfTimes = {
+    first: '10:00-11:30',
+    second: '12:00-13:30',
+    third: '14:00-15:30'
+  }
+  this.props.getTreatment('90 min', hourHalfTimes.first, hourHalfTimes.second, hourHalfTimes.third);
+  }
 
 });
 

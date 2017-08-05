@@ -16,6 +16,13 @@
   .active-day {
     background-color: $gray !important;
     color:$white;
+    animation: pop 0.3s linear 1;
+
+  }
+  @keyframes pop{
+    50%  {
+      transform: scale(1.1);
+    }
   }
   .monday,
   .tuesday,
@@ -32,6 +39,7 @@
     border-radius: 10px;
     transition: 0.2s all;
     cursor: pointer;
+
 
     p {
       margin:0;
@@ -50,6 +58,15 @@
   .sunday:hover {
     background-color: $gray;
     color:$white;
+
+
+  }
+
+  .monday:active,
+  .monday:focus {
+
+    max-height: 500px !important;;
+    transition: max-height 0.25s ease-in;
   }
 
   .saturday,
