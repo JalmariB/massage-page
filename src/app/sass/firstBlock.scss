@@ -1,11 +1,27 @@
 /***** First Block ****/
 
 .first-block {
-  padding:280px 0 100px 0;
+  padding:280px 0 200px 0;
   width: 100%;
-  text-align: center;
   // background-image: url(../img/jump.jpeg);
   color:$white;
+
+  .text-container {
+    width: 80%;
+    text-align: left;
+    margin:0 auto;
+
+
+    p {
+      font-weight:lighter;
+      text-transform: uppercase;
+      margin: 5px 0 30px;
+      font-size: 14px;
+    }
+    .primary-button {
+
+    }
+  }
 }
 
 #video-background {

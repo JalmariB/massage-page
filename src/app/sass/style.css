@@ -57,15 +57,13 @@ li {
 .primary-button {
   border: none;
   text-decoration: none;
-  padding: 15px 35px;
+  padding: 20px 35px;
   /*width: 200px;*/
   font-weight: normal;
   background-color: #ffa31a;
   border-radius: 10px;
   border: 1px solid #ffa31a !important;
   transition: 0.2s all;
-  display: block;
-  margin: 0 auto;
   font-size: 1.1em;
   color: #fff;
   cursor: pointer;
@@ -149,7 +147,9 @@ li {
   text-align: center;
   line-height: 42px;
   font-size: 2.3em;
-  transition: 0.2s all; }
+  transition: 0.2s all;
+  color: #ffffff;
+  font-weight: bold; }
 
 .hexagon:before {
   content: "";
@@ -196,6 +196,7 @@ li {
   transition: 2s all;
   border-bottom: 25px solid #ffa31a; }
 
+/*** NAV ITEM****/
 .nav-item {
   display: block;
   padding: 20px;
@@ -213,10 +214,18 @@ li {
 
 /***** First Block ****/
 .first-block {
-  padding: 280px 0 100px 0;
+  padding: 280px 0 200px 0;
   width: 100%;
-  text-align: center;
   color: #ffffff; }
+  .first-block .text-container {
+    width: 80%;
+    text-align: left;
+    margin: 0 auto; }
+    .first-block .text-container p {
+      font-weight: lighter;
+      text-transform: uppercase;
+      margin: 5px 0 30px;
+      font-size: 14px; }
 
 #video-background {
   /*  making the video fullscreen  */
@@ -240,13 +249,20 @@ li {
   .second-block p {
     width: 80%;
     margin: 30px auto; }
+  .second-block .profile-image {
+    display: block;
+    margin: 50px auto 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #4d4d4d; }
 
 /*********** appoinment-header *************/
 .header-container,
 .appoinment-header-container {
   text-align: center;
   margin-top: 100px;
-  padding: 100px 0; }
+  padding: 50px 0; }
   .header-container h1::after,
   .appoinment-header-container h1::after {
     content: "";
@@ -309,7 +325,7 @@ li {
   .calendar-container .sunday {
     display: inline-block;
     border: 1px solid #6e6e6e;
-    padding: 15px 10px;
+    padding: 15px 5px;
     margin: 10px 1%;
     background-color: #ffffff;
     border-radius: 10px;
@@ -330,7 +346,7 @@ li {
     .calendar-container .friday :last-child,
     .calendar-container .saturday :last-child,
     .calendar-container .sunday :last-child {
-      font-size: 12px; }
+      font-size: 10px; }
   .calendar-container .monday:hover,
   .calendar-container .tuesday:hover,
   .calendar-container .wednesday:hover,
@@ -535,6 +551,24 @@ footer::before {
   width: 90%;
   background-color: #ccc; }
 
+@media screen and (min-width: 580px) {
+  .monday,
+  .tuesday,
+  .wednesday,
+  .thursday,
+  .friday,
+  .saturday,
+  .sunday {
+    padding: 15px 10px;
+    margin: 10px 1%; }
+    .monday :last-child,
+    .tuesday :last-child,
+    .wednesday :last-child,
+    .thursday :last-child,
+    .friday :last-child,
+    .saturday :last-child,
+    .sunday :last-child {
+      font-size: 12px; } }
 @media screen and (min-width: 768px) {
   /*****  NAVIGATION DESKTOP *****/
   #header-container {
@@ -542,33 +576,53 @@ footer::before {
     top: 0px;
     width: 100%;
     height: 60px;
-    left: -5%;
+    left: 0;
     background-color: transparent;
-    padding-top: 10px; }
+    padding-top: 30px;
+    padding-right: 30px; }
     #header-container .hamburger-icon {
       display: none; }
-    #header-container .nav-item {
-      text-align: center;
-      display: inline-block;
-      padding: 10px;
-      width: 120px;
-      color: #ffffff;
-      border-bottom: 3px solid transparent;
-      transition: all 0.3s ease 0s;
-      -webkit-transition: all 0.3s ease; }
-    #header-container .nav-item:hover {
-      background-color: transparent; }
-    #header-container .nav-item:after {
-      transition: 0.3s all;
-      content: "";
-      display: block;
-      width: 70px;
-      height: 2px;
-      margin: 10px auto;
-      background-color: transparent; }
-    #header-container .nav-item:hover:after {
-      content: "";
-      background-color: #ffa31a; }
+    #header-container .scrolled-hexagon {
+      transition: 1s all;
+      opacity: 0; }
+    #header-container .nav-block {
+      transition: 1s all;
+      position: absolute;
+      background-color: rgba(77, 77, 77, 0);
+      width: 100%;
+      padding-right: 5%;
+      top: 35px; }
+      #header-container .nav-block .nav-item {
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+        width: 120px;
+        color: #ffffff;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease 0s;
+        -webkit-transition: all 0.3s ease; }
+      #header-container .nav-block .nav-item:hover {
+        background-color: transparent; }
+      #header-container .nav-block .nav-item:after {
+        transition: 0.3s all;
+        content: "";
+        display: block;
+        width: 70px;
+        height: 2px;
+        margin: 10px auto;
+        background-color: transparent; }
+      #header-container .nav-block .nav-item:hover:after {
+        content: "";
+        background-color: #ffa31a; }
+    #header-container .scrolled-nav {
+      position: fixed;
+      background-color: rgba(77, 77, 77, 0.8);
+      transition: 1s all;
+      top: 0;
+      padding-top: 10px;
+      height: 61px; }
+      #header-container .scrolled-nav a li {
+        color: white !important; }
 
   #video-background {
     /*  making the video fullscreen  */
@@ -583,7 +637,7 @@ footer::before {
 @media screen and (min-width: 1024px) {
   /*****  LOGO *****/
   .hexagon {
-    left: 5%; }
+    left: 40px; }
 
   /*****  FIRST BLOCK *****/
   .first-block {
@@ -591,6 +645,14 @@ footer::before {
     width: 100%;
     text-align: center;
     color: #ffffff; }
+    .first-block .text-container {
+      width: 600px; }
+      .first-block .text-container h1 {
+        font-size: 3em;
+        font-weight: bold;
+        margin: 5px 0 0 0; }
+      .first-block .text-container p {
+        font-size: 14px; }
 
   /*****  SECOND BLOCK *****/
   .second-block p {

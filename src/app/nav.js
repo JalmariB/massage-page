@@ -8,13 +8,22 @@ var NavComponent = React.createClass({
       var menu = document.querySelector('#header-container')
       menu.classList.toggle('hamburger-in');
       $('.hexagon').toggleClass('hover-logo');
+
+
+          if($('#header-container').width() === 180) {
+            $('.nav-item').css('color', 'white')
+          }
+          else {
+            $('.nav-item').css('color', 'black')
+          }
+
     }
     return(
       <div>
         <header id="header-container">
           <Link to={'/app/'}><div className="hexagon">B</div></Link>
           <div onClick={toggleClassNav} className=" hamburger-icon "><i className="fa fa-bars"></i></div>
-          <div><NavTitlesComponent /></div>
+          <NavTitlesComponent />
         </header>
       </div>
     );
@@ -23,31 +32,35 @@ var NavComponent = React.createClass({
 
 //create NestedComponent
 var NavTitlesComponent = React.createClass({
+
   getInitialState: function (){
     var homeIcon = '<i className="fa fa-home"></i>';
     return {
-      navNames: ['Ajanvaraus', 'Hinnasto', 'Janne Berg', 'Yhteystiedot'],
+      navNames: ['Ajanvaraus', 'Hinnasto', 'Yhteystiedot']
+
+
     }
   },
 
   render: function(){
+
+
     return (
-      <div>
+      <div className="nav-block">
         <Link className="item-name" to={'/app/appointment'}><li className="nav-item">
           {this.state.navNames[0]}
         </li></Link>
         <Link className="item-name" to={'/app/prices'}><li className="nav-item">
           {this.state.navNames[1]}
         </li></Link>
-        <Link className="item-name" to={'/app/customerForm'}><li className="nav-item">
-          {this.state.navNames[2]}
-        </li></Link>
         <Link className="item-name" to={'/app/contact'}><li className="nav-item">
-          {this.state.navNames[3]}
+          {this.state.navNames[2]}
         </li></Link>
       </div>
     );
-  }
+  },
+
+
 });
 
 module.exports = NavComponent;

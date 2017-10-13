@@ -44,6 +44,10 @@ a {
   background-size: cover;
   background-position:center center;
 }
+// .testi {
+//   color:$white;
+//   background-color: red;
+// }
 h1 {
   font-size: 1.7em;
 }
@@ -66,15 +70,14 @@ li  {
 .primary-button {
 	border: none;
 	text-decoration: none;
-	padding:15px 35px;
+	padding:20px 35px;
   /*width: 200px;*/
+  // text-transform: uppercase;
   font-weight: normal;
 	background-color:$orange;
 	border-radius:10px;
 	border:1px solid $orange !important;
 	transition:0.2s all;
-	display: block;
-	margin:0 auto;
 	font-size: 1.1em;
 	color:#fff;
   cursor:pointer;

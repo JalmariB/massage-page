@@ -31,7 +31,7 @@
 .hexagon {
   width: 74px;
   height: 40px;
-  background: #4d4d4d;
+  background: $black;
   position: fixed;
   top: 40px;
   left: 45px;
@@ -39,6 +39,8 @@
   line-height: 42px;
   font-size: 2.3em;
   transition: 0.2s all;
+  color:$white;
+  font-weight: bold;
 }
 .hexagon:before {
 	content: "";
@@ -66,6 +68,7 @@
 }
 .hexagon:hover {
   background-color: $orange;
+  // color:$white;
 
 }
 .hexagon:hover::before {
@@ -87,21 +90,30 @@
   transition: 2s all;
   border-bottom: 25px solid   $orange;
 }
+// .logo-text {
+//   display: none;
+//   color:#4d4d4d;
+//
+// }
+
+/*** NAV ITEM****/
+
+  .nav-item {
+    display: block;
+    padding:20px;
+    width: 180px;
+    cursor: pointer;
+
+  }
+  .nav-item:hover {
+    transition: 0.2s all;
+    color:$white;
+    background-color: $orange;
+  }
 
 
 
-.nav-item {
-  display: block;
-  padding:20px;
-  width: 180px;
-  cursor: pointer;
 
-}
-.nav-item:hover {
-  transition: 0.2s all;
-  color:$white;
-  background-color: $orange;
-}
 
 
 .hamburger-in {

@@ -40,5 +40,27 @@ var Contact = React.createClass ({
 
   },
 
+  componentDidMount() {
+
+    if(window.attachEvent) {
+    window.attachEvent('onresize', function() {
+        alert('attachEvent - resize');
+    });
+}
+else if(window.addEventListener) {
+  $('.nav-item').css('color', 'black')
+    window.addEventListener('resize', function() {
+        console.log('addEventListener - resize');
+        if($(window).width() > 750) {
+          console.log('width', $(window).width() );
+          $('.nav-item').css('color', 'black')
+        }
+        else {
+          $('.nav-item').css('color', 'white')
+        }
+    }, true);
+}
+  }
+
 });
 module.exports = Contact;

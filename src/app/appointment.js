@@ -5,7 +5,6 @@ var moment = require('moment');
 var firebase = require("firebase");
 import{Link} from 'react-router';
 
-
 var NavComponent = require('./nav')
 var AppointmentTime = require('./appointmentTime')
 var AppointmentHeaderComponent = require('./appointmentHeader')
@@ -14,8 +13,14 @@ var AppointmentForm = require('./appointmentForm')
 var AppointmentConfirmation = require('./appointmentConfirmation')
 var AppointmentResult = require('./appointmentResult')
 var FooterComponent = require('./footer')
+
+
 var Appointment = React.createClass({
 
+    // constructor(props) {
+    //        super(props);
+    //        this.state = { myState: 1 };
+    //    }
 
   getInitialState: function() {
 
@@ -31,7 +36,8 @@ var Appointment = React.createClass({
             hourTimes: ['10:00-11:00', '11:00-12:00', '12:00-13:00', '13:00-14:00', '14:00-15:00'],
             hourHalfTimes: ['10:00-11:30', '12:00-13:30', '14:00-15:30'],
             testi: 2,
-            blockTimes: []
+            blockTimes: [],
+            blackColorNav: 'uusi state lähetetty'
           };
      },
 
@@ -40,7 +46,7 @@ var Appointment = React.createClass({
     return (
 
       <div>
-        <NavComponent />
+        <NavComponent blackColorNav={this.state.blackColorNav}/>
         <AppointmentHeaderComponent />
         { this.state.componentTime ? <AppointmentTime  newState={this.newState} getTreatment={this.getTreatment} /> : null}
         { this.state.componentSelectDay ? <AppointmentSelectDay blockTimes={this.state.blockTimes} treatmentDate={this.treatmentDate} treatmentTimes={this.treatmentTimes} newState={this.newState} clearTreatment={this.clearTreatment} /> : null}
@@ -52,6 +58,11 @@ var Appointment = React.createClass({
     );
   },
 
+blackColorNav: function(){
+  console.log('apppointment')
+  // $('.nav-item').css('color', 'black')
+
+},
   newState: function(b, b2, b3, b4, b5) {
 
       this.setState({
@@ -161,7 +172,29 @@ sendToFireBase: function(){
     addTimeRef.push({
       time:this.state.customerInfo[2]
     });
+},
+componentDidMount() {
+
+  if(window.attachEvent) {
+  window.attachEvent('onresize', function() {
+      alert('attachEvent - resize');
+  });
 }
+else if(window.addEventListener) {
+$('.nav-item').css('color', 'black')
+  window.addEventListener('resize', function() {
+      console.log('addEventListener - resize');
+      if($(window).width() > 750) {
+        console.log('width', $(window).width() );
+        $('.nav-item').css('color', 'black')
+      }
+      else {
+        $('.nav-item').css('color', 'white')
+      }
+  }, true);
+}
+}
+
 });
 
 

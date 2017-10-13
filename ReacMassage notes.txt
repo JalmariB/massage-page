@@ -1,4 +1,4 @@
-********* CMD ASENNUS ********
+﻿********* CMD ASENNUS ********
 
 asentaa rect ja react dom modulit
 npm install react react-dom --save
@@ -215,6 +215,36 @@ D:\massage-page\src\app\sass>sass style.scss style.css
 
 *seuraa sass filua*
 sass --watch style.scss:style.css
+
+
+
+
+
+
+/********* ES6 =  ECMAScript 6 ***********/
+
+Mikä se on?
+
+ECMAScript is the “proper” name for the language commonly referred to as JavaScript.
+
+Luultavasti vain uusi tapa kirjoittaa JavaScriptiä, tai yksi suosituimmista tavoista
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

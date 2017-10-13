@@ -13,4 +13,13 @@
     width: 80%;
     margin:30px auto;
   }
+  .profile-image {
+    display: block;
+    margin:50px auto 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid $black;
+
+  }
 }

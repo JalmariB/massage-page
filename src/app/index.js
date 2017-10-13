@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 
 
 
+
 //Module requires
 var NavComponent = require('./nav')
 var FooterComponent = require('./footer')
@@ -26,10 +27,10 @@ var config = {
      firebase.initializeApp(config);
 
 
+class App extends React.Component {
 
-var App = React.createClass ({
 
-  render: function (){
+  render(){
     return(
         <Router history={browserHistory}>
           <Route path={'/app'} component={MainComponent}></Route>
@@ -39,22 +40,67 @@ var App = React.createClass ({
         </Router>
       );
   }
-});
+
+};
 
 // Start
-class MainComponent extends Component {
+class MainComponent extends React.Component {
+
+
+
 
 
   render(){
     return(
-        <div>
-          <NavComponent/>
+        <div onScroll={this.changeNav}>
+          <NavComponent />
           <FirstBlockComponent/>
           <SecondBlockComponent/>
           <FooterComponent/>
         </div>
       );
   }
+//   changeNav() {
+//
+//     var navItem = document.getElementById('header-container')
+//     var rect = element.getBoundingClientRect();
+//
+// }
+
+  componentDidMount() {
+    // window.addEventListener('scroll', (e)=> if (console.log(e.target, window.pageYOffset));
+    window.addEventListener('scroll', function() {
+      if(window.pageYOffset > 10) {
+
+        $('.nav-block').addClass('scrolled-nav')
+        $('.hexagon').addClass('scrolled-hexagon')
+      }
+      else {
+        $('.nav-block').removeClass('scrolled-nav')
+        $('.hexagon').removeClass('scrolled-hexagon')
+      }
+    });
+    $('.nav-item').css('color', 'white')
+    if(window.attachEvent) {
+    window.attachEvent('onresize', function() {
+        alert('attachEvent - resize');
+    });
+}
+else if(window.addEventListener) {
+
+    window.addEventListener('resize', function() {
+      console.log('resizes')
+        if($(window).width() > 750) {
+          $('.nav-item').css('color', 'white')
+        }
+        else {
+          $('.nav-item').css('color', 'white')
+        }
+    }, true);
+}
+this.changeNav()
+  }
+
 
 
 }

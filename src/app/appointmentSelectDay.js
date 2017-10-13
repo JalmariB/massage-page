@@ -210,7 +210,7 @@ var AppointmentSelectDayComponent = React.createClass({
 
     $('li').removeClass('active-day')
     currentLiElement.addClass('active-day')
-    
+
      $('.monday-times-first').show()
 
               firebaseRefGetDate.on("child_added", snap => {
@@ -284,99 +284,6 @@ var AppointmentSelectDayComponent = React.createClass({
                 }
 
 
-                // if (time === '12:00-12:30'){
-                //   console.log('if--30testi--- ' + firebaseRefGetDate + '   ' + time )
-                //   // $('.first-time').hide()
-                // }
-                // if (time === '12:00-12:45'){
-                //   console.log('if--45testi--- ' + firebaseRefGetDate + '   ' + time )
-                //   $('.first-time').hide()
-                // }
-                // if (time === '12:00-12:30'){
-                //   console.log('if-- 30min --- ' + firebaseRefGetDate + '   ' + time )
-                // }
-
-                //
-                // if (time === '10:00-10:30') {
-                //     if ($('.first-time').text() === '10:00-10:30' ){
-                //       $('.first-time').hide()
-                //     }
-                // }
-                // if (time === '10:00-10:45') {
-                //     if ($('.first-time').text() === '10:00-10:45'){
-                //       $('.first-time').hide()
-                //     }
-                // }
-                // if (time === '10:00-11:00') {
-                //     if ($('.first-time').text() === '10:00-11:00'){
-                //       $('.first-time').hide()
-                //     }
-                // }
-
-
-                // if (time === '11:00-11:30' || time === '11:00-11:45' || time === '11:00-12:00') {
-                //     if ($('.first-time').text() === '11:00-11:30' || $('.first-time').text() === '11:00-11:45' || $('.first-time').text() === '11:00-12:00' ){
-                //       $('.second-time').hide()
-                //     }
-                // }
-                // if (time === '12:00-12:30' || time === '12:00-12:45' || time === '12:00-13:00') {
-                //     if ($('.first-time').text() === '12:00-12:30' || $('.first-time').text() === '12:00-12:45' || $('.first-time').text() === '12:00-13:00' ){
-                //       $('.third-time').hide()
-                //     }
-                // }
-                // if (time === '13:00-13:30' || time === '13:00-13:45' || time === '13:00-14:00') {
-                //     if ($('.first-time').text() === '13:00-13:30' || $('.first-time').text() === '13:00-13:45' || $('.first-time').text() === '13:00-14:00' ){
-                //       $('.fourth-time').hide()
-                //     }
-                // }
-                // if (time === '14:00-14:30' || time === '14:00-14:45' || time === '14:00-15:00') {
-                //     if ($('.first-time').text() === '14:00-14:30' || $('.first-time').text() === '14:00-14:45' || $('.first-time').text() === '14:00-15:00' ){
-                //       $('.fifth-time').hide()
-                //     }
-                // }
-                // if (time === '15:00-15:30' || time === '15:00-15:45' || time === '15:00-16:00') {
-                //     if ($('.first-time').text() === '15:00-15:30' || $('.first-time').text() === '15:00-15:45' || $('.first-time').text() === '15:00-16:00' ){
-                //       $('.first-time').hide()
-                //     }
-                // }
-                // if (time === '10:00-10:45') {
-                //     if ($('.first-time').text() === '10:00-10:45' ){
-                //       $('.first-time').hide()
-                //     }
-                // }
-                // if (time === '10:00-11:00') {
-                //     if ($('.first-time').text() === '10:00-11:00' ){
-                //       $('.first-time').hide()
-                //     }
-                // }
-                // if (time === '10:00-11:30') {
-                //     if ($('.first-time').text() === '10:00-11:00' ){
-                //       $('.first-time').hide()
-                //     }
-                // }
-
-                // if (time === '10:00-10:45') {
-                //
-                //       $('.first-time').hide()
-                //       $('.second-time').hide()
-                //
-                // }
-                //
-                // if (time === '11:00-11:30') {
-                //   if ($('.third-time').text() === '11:00-11:30'){
-                //     $('.third-time').hide()
-                //   }
-                // }
-                // if (time === '11:30-12:00') {
-                //   if ($('.fifth-time').text() === '11:00-11:30'){
-                //     $('.fourth-time').hide()
-                //   }
-                // }
-                // if (time === '12:00-12:30') {
-                //   if ($('.fifth-time').text() === '11:00-11:30'){
-                //     $('.fifth-time').hide()
-                //   }
-                // }
               })
 
     // this.props.treatmentTimes(currentDateText);

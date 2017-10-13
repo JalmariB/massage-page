@@ -13,7 +13,8 @@ var SecondBlockComponent = React.createClass({
           Palvelen laajoilla aukioloajoilla; arkisin jo aamu seitsemästä, ilta kymmeneen asti. </p>
           <p>Hieronta nopeuttaa palautumista liikuntasuorituksesta, vähentää kipuilua ja lihasjännitystä, sekä
           alentaa tehokkaasti stressiä rentouttaen kehoa ja mieltä.</p>
-      
+          <img src={'img/stones.jpg'} alt="boohoo" className="profile-image"/>
+
       </div>
 
     );
