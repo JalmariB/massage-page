@@ -30,11 +30,6 @@ halfHour: function(){
     third:'12:00-12:30',
     fourth:'13:00-13:30',
     fifth:'14:00-14:30'
-    // first: '10:00-10:30',
-    // second: '10:30-11:00',
-    // third:'11:00-11:30',
-    // fourth:'11:30-12:00',
-    // fifth:'12:00-12:30'
   }
   this.props.getTreatment('30 min', halfHourTimes.first, halfHourTimes.second, halfHourTimes.third, halfHourTimes.fourth, halfHourTimes.fifth );
 

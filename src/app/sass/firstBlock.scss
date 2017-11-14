@@ -1,10 +1,10 @@
 /***** First Block ****/
 
 .first-block {
-  padding:280px 0 200px 0;
+  padding:230px 0 200px 0;
   width: 100%;
-  // background-image: url(../img/jump.jpeg);
   color:$white;
+  background-color: rgba(0, 0, 0, .2);
 
   .text-container {
     width: 80%;
@@ -16,17 +16,16 @@
       font-weight:lighter;
       text-transform: uppercase;
       margin: 5px 0 30px;
-      font-size: 14px;
+      font-size: 15px;
     }
-    .primary-button {
 
-    }
   }
 }
 
 #video-background {
 /*  making the video fullscreen  */
   position: fixed;
+
   right: -350px;
   bottom: 0;
   min-width: 100%;
@@ -34,4 +33,7 @@
   width: auto;
   height: auto;
   z-index: -100;
+  transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
 }

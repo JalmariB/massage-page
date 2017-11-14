@@ -14,7 +14,7 @@ var AppointmentResult = React.createClass ({
       <div >
             <div className="appointment-result-container">
                   <h2>Hierontasi on nyt varattu!</h2>
-                  <p>Varaamasi hieronnan tiedot on lähetetty sähköpostiisi {this.props.customerInfo[3]}. Tervetuloa!</p>
+                  <p>Varaamasi hieronnan tiedot on lähetetty sähköpostiisi {this.props.customerInfo[4]}. Tervetuloa!</p>
                   <h2>Ajan peruutus</h2>
                   <p>Jos et pääse paikalle varattuna aikana, voit peruuttaa hieronnan soittamalla numeroon 050 806 0600</p>
                   <div className="buttons-container">

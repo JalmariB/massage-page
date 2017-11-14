@@ -20,6 +20,16 @@
 }
 
 @media screen and (min-width: 768px) {
+.second-block {
+  .profile-image {
+
+    width: 300px;
+    height: 300px;
+
+
+
+  }
+}
 
 
 /*****  NAVIGATION DESKTOP *****/
@@ -48,7 +58,7 @@
 //nav colors
 
   .nav-block {
-    transition: 1s all;
+    transition: .2s all;
     position: absolute;
     background-color: rgba(77, 77, 77, 0);
     width: 100%;
@@ -116,6 +126,8 @@
     height: auto;
     z-index: -100;
   }
+
+
 }
 
 
@@ -125,6 +137,11 @@
 /*****  LOGO *****/
   .hexagon {
     left: 40px;
+  }
+
+  .primary-button {
+  	padding:20px 35px;
+  	font-size: 1.1em;
   }
 
   // .logo-text {
@@ -140,21 +157,24 @@
 
 /*****  FIRST BLOCK *****/
   .first-block {
-      padding: 320px 0 480px 0;
+      padding: 310px 0 480px 0;
       width: 100%;
       text-align: center;
       // background-image: url(../img/jump.jpeg);
       color: #ffffff;
       // background-color: #222;
+
+
       .text-container {
-        width: 600px;
+        letter-spacing: 3px;
+        width: 900px;
         h1 {
-          font-size: 3em;
+          font-size: 5em;
           font-weight: bold;
           margin:5px 0 0 0;
         }
         p {
-          font-size: 14px;
+          font-size: 20px;
 
         }
 
@@ -184,6 +204,27 @@
     height: 1px;
   }
 }
+
+
+}
+
+@media screen and (min-width: 1400px) {
+
+
+/*****  FIRST BLOCK *****/
+  .first-block {
+
+      .text-container {
+        width: 1000px;
+        h1 {
+          font-size: 6em;
+
+        }
+
+
+      }
+
+  }
 
 
 }

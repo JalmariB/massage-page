@@ -12,9 +12,9 @@ var FooterComponent = React.createClass({
             <p className="fa fa-twitter"></p>
           </div>
           <div className="contact-footer-container">
-            <p><span>Sähköposti:</span>hierontaterapeutti.janne.berg@gmail.com</p>
+            <p><span>Sähköposti:</span>janne.berg@hierontaterapeutti.fi</p>
             <p><span>Puh:</span> 050 806 0600</p>
-            <p><span>Osoite:</span> Töölö</p>
+            <p><span>Osoite:</span> Erottajankatu</p>
           </div>
 
           <p className="copyright">&#169; Janne Berg</p>

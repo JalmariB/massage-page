@@ -17,11 +17,6 @@ var FooterComponent = require('./footer')
 
 var Appointment = React.createClass({
 
-    // constructor(props) {
-    //        super(props);
-    //        this.state = { myState: 1 };
-    //    }
-
   getInitialState: function() {
 
          return {
@@ -124,7 +119,6 @@ getTreatment:function(treatment, time1, time2, time3, time4, time5){
     if (setTreatmentDate.length === 3) {
       setTreatmentDate.splice(1, 1);
     }
-    console.log(this.state.customerInfo)
     this.setState ({
         customerInfo: setTreatmentDate
     })
@@ -139,10 +133,6 @@ getTreatment:function(treatment, time1, time2, time3, time4, time5){
 
   },
   setCustomerInfo: function(){
-
-
-
-    console.log(this.state.customerInfo)
         document.getElementById("customerTreatment").innerHTML = this.state.customerInfo[0];
         document.getElementById("customerDate").innerHTML = this.state.customerInfo[1];
         document.getElementById("customerTime").innerHTML = this.state.customerInfo[2];
@@ -152,13 +142,10 @@ getTreatment:function(treatment, time1, time2, time3, time4, time5){
 
   },
 sendToFireBase: function(){
-  var dateToFirebase = this.state.customerInfo[1].replace(/\./g,'');
   var firebaseRef = firebase.database().ref();
   var customerInfoRef = firebaseRef.child('customer');
-  var addDateRef = customerInfoRef.child('date');
-  var addTimeRef = addDateRef.child(dateToFirebase);
-    customerInfoRef.push({
 
+    customerInfoRef.push({
       treatment: this.state.customerInfo[0],
       date: this.state.customerInfo[1] + this.state.customerInfo[2],
       time: this.state.customerInfo[2],
@@ -166,12 +153,7 @@ sendToFireBase: function(){
       email: this.state.customerInfo[4],
       phonenumber: this.state.customerInfo[5]
     });
-    addDateRef.push({
-      date: dateToFirebase
-    });
-    addTimeRef.push({
-      time:this.state.customerInfo[2]
-    });
+
 },
 componentDidMount() {
 

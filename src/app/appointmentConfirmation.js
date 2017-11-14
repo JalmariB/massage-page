@@ -21,10 +21,6 @@ var AppointmentConfirmation = React.createClass ({
                       <li><p><strong>Nimi:</strong> </p><p id="customerName"></p></li>
                       <li><p><strong>Sähköposti:</strong> </p><p id="customerEmail"></p></li>
                       <li><p><strong>Puhelinnumero:</strong> </p><p id="customerPhone"></p></li>
-                      <textarea id="myText">
-    Lorem ipsum...
-</textarea>
-<button onClick={this.sendMail}>Send</button>
                   </ul>
                   <div className="buttons-container">
                     <button onClick={this.backToForm} className="secondary-button">Takaisin</button>
@@ -43,18 +39,6 @@ backToForm: function() {
   this.props.clearCustomerInfo();
   this.props.newState(false, false, true, false);
 
-},
-sendMail: function() {
-  console.log('customer value', document.getElementById('customerTime').value);
-      var link = "mailto:janne.bergg@gmail.com"
-              + "?cc=berg-55@hotmail.com"
-              + "&subject=" + escape("This is my subject")
-              + "&body=" + escape(document.getElementById('customerTime').value)
-
-
-     ;
-
-     window.location.href = link;
 },
 confirmOrder: function() {
     this.props.sendToFireBase();

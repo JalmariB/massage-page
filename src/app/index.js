@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, Link} from 'react-router';
 import * as firebase from 'firebase';
 
-
-
-
 //Module requires
 var NavComponent = require('./nav')
 var FooterComponent = require('./footer')
@@ -46,13 +43,9 @@ class App extends React.Component {
 // Start
 class MainComponent extends React.Component {
 
-
-
-
-
   render(){
     return(
-        <div onScroll={this.changeNav}>
+        <div>
           <NavComponent />
           <FirstBlockComponent/>
           <SecondBlockComponent/>
@@ -60,15 +53,8 @@ class MainComponent extends React.Component {
         </div>
       );
   }
-//   changeNav() {
-//
-//     var navItem = document.getElementById('header-container')
-//     var rect = element.getBoundingClientRect();
-//
-// }
 
   componentDidMount() {
-    // window.addEventListener('scroll', (e)=> if (console.log(e.target, window.pageYOffset));
     window.addEventListener('scroll', function() {
       if(window.pageYOffset > 10) {
 
@@ -87,9 +73,7 @@ class MainComponent extends React.Component {
     });
 }
 else if(window.addEventListener) {
-
     window.addEventListener('resize', function() {
-      console.log('resizes')
         if($(window).width() > 750) {
           $('.nav-item').css('color', 'white')
         }
@@ -98,14 +82,8 @@ else if(window.addEventListener) {
         }
     }, true);
 }
-this.changeNav()
+
   }
-
-
-
 }
-
-
-
 
 ReactDOM.render(<App />, document.getElementById('app-container'));

@@ -10,13 +10,16 @@ var FirstBlockComponent = React.createClass({
       <div>
         <div  className="first-block image">
           <div className="text-container">
-            <h1 >Urheiluhierontaa</h1>
-            <p>Varaa aika nopeasti ja kätevästi netin kautta.</p>
+
+            <h1>Muista pitää huolta</h1>
+            <h1>kehostasi</h1>
+            <p>Varaa aika urheiluhierontaan.</p>
             <Link to={'/app/appointment'}><button className="primary-button">Ajanvaraukseen</button></Link>
+          
           </div>
         </div>
-        <video autoPlay loop id="video-background" muted >
-        <source src="img/video.mp4" type="video/mp4"></source>
+        <video autoPlay loop id="video-background"  >
+        <source src="img/video.mp4" type="video/mp4" autoplay="false"></source>
         </video>
       </div>
     );
